@@ -6,13 +6,13 @@ This is a call to action, how will we be seen by our great grand children?
 
 If we just accept that the current approach to politics cannot be changed - the answer is we are fucked.  Down that path, we won't have any great grand children.
 
-We must question the very ground we walk on and start reform *immediately*.
+We must question the very ground we walk on and start reform **immediately**.
 
 The biggest challenges to ever face humanity are already here and yet we are busy arguing over the scraps left behind by the billionaires who have already built their bunkers.
 
 Humans are an amazingly inventive and resourceful species, let's start using these inventions of ours to co-ordinate ourselves.
 
-The current political system, that is obviously failing, was invented *before electricity*.
+The current political system, that is obviously failing, was invented **before electricity**.
 
 Let's leave our great grand children a world.
 
@@ -32,9 +32,9 @@ There would be some slick marketing campaign that makes this machine look amazin
 
 Then life happens - chaos, shit breaks, people don't do what they said they would do or they do it wrong.  It turns out that the "maxotron-2000" does not have the capability to adjust to reality but because we've already sold ourselves on the idea it should, we pretend it can still work and fudge our way through.
 
-It turns out that it's much better to *compose* a solution from lots of smaller parts.  Have a hammer, a saw, a chisel and some nails and then when problems crop up - let's pick which tool we need to use to solve each problem.
+It turns out that it's much better to **compose** a solution from lots of smaller parts.  Have a hammer, a saw, a chisel and some nails and then when problems crop up - let's pick which tool we need to use to solve each problem.
 
-Electing a single government who will make *all* decisions is like the "maxotron-2000" - it means well but fails to deal with the complexity of modern life.
+Electing a single government who will make **all** decisions is like the "maxotron-2000" - it means well but fails to deal with the complexity of modern life.
 
 Things to expand upon:
 
@@ -77,11 +77,11 @@ Things to expand upon:
 
 ## proxy MP's
 
-If we are to make *actual* change (and for this not just to be another protest that is ignored) - we will need a political revolution.
+If we are to make **actual** change (and for this not just to be another protest that is ignored) - we will need a political revolution.
 
 Those are normally not very nice and people get hurt because it normally involves some kind of violence.
 
-We need a plan for how we can change how things are *without* having to storm the house of commons.
+We need a plan for how we can change how things are **without** having to storm the house of commons.
 
 A proxy MP is one that stands in the election just like normal - it would cost something like £350,000 to do this in the UK (i.e. putting up the £500 deposit for an MP in each constituency).  The key thing is that each MP makes it very clear that they are not actually going to make any decisions but instead defer to the platform.
 
