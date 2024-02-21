@@ -127,3 +127,9 @@ Working earns on top but baseline is comfortable because no one is taking from t
 ### chartism
 
 https://en.wikipedia.org/wiki/Chartism
+
+### Quote
+
+If I know anything it is I know nothing.
+
+
