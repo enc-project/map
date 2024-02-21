@@ -132,4 +132,8 @@ https://en.wikipedia.org/wiki/Chartism
 
 If I know anything it is I know nothing.
 
+### billionaires are just doing very well at the game
+
+They are not bad people - they are just doing really well within the framework.
+
 
