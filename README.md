@@ -15,8 +15,8 @@ But:
 Here are some wrong answers to get the conversation started:
 
  * [political parties are a problem](articles/political-parties.md)
- * [election cycles take ages](articles/election-cycle.md)
- * [perspective generator](articles/perspective-generator.md)
+ * [an election cycle takes ages](articles/election-cycle.md)
+ * [the perspective generator](articles/perspective-generator.md)
  * [media manipulation](articles/media-manipulation.md)
  * [the wealth gap](articles/wealth-gap.md)
 
