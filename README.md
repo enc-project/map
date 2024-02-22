@@ -8,11 +8,13 @@ We can seriously do better if we challenge our thinking.
 
 > I know that I know nothing ([plato](https://en.wikipedia.org/wiki/I_know_that_I_know_nothing))
 
-> to get the right answer on the Internet, first put the wrong answer
+We are not experts in politics, economics, or any of the other fields that we are discussing.
 
-[cunningham](https://meta.wikimedia.org/wiki/Cunningham%27s_Law)
+At the same time:
 
-Here are some wrong answers to get the conversation started:
+> to get the right answer on the Internet, first put the wrong answer ([cunningham](https://meta.wikimedia.org/wiki/Cunningham%27s_Law))
+
+So, here are some wrong answers to get the conversation started:
 
  * [political parties are a problem](articles/political-parties.md)
  * [an election cycle takes ages](articles/election-cycle.md)
