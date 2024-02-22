@@ -137,3 +137,17 @@ If I know anything it is I know nothing.
 They are not bad people - they are just doing really well within the framework.
 
 
+## other things
+
+This is a list of other things we should cover - there are many more but for now here we are:
+
+ * AI - large language models are a very useful tool to automate various parts of the platform
+ * web3 - we have the technology to do this where we don't need to trust anyone
+ * long term stock ownership
+   * a lot of the current problems are because of shareholders
+   * if you buy shares in a company and you cannot sell them for X years it would solve a lot of this
+ * David bowie rich enough
+ * we have no idea what we are doing
+ 
+
+
