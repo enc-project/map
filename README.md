@@ -1,12 +1,12 @@
 # enc project
 
-Our political system was invented before electricity.  Now we have the Internet and generative AI.  
+Our political system was invented before electricity.
 
-> I know that I know nothing
+Now we have the Internet and generative AI.
 
-[plato](https://en.wikipedia.org/wiki/I_know_that_I_know_nothing)
+We can seriously do better if we challenge our thinking.
 
-But:
+> I know that I know nothing ([plato](https://en.wikipedia.org/wiki/I_know_that_I_know_nothing))
 
 > to get the right answer on the Internet, first put the wrong answer
 
