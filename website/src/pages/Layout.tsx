@@ -1,6 +1,7 @@
 import React, { useState, FC } from 'react'
-import { styled } from '@mui/system'
-import { CSSObject } from '@mui/material/styles'
+import styled from '@mui/system/styled'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import { CSSObject, useTheme } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import AppBar from '@mui/material/AppBar'
@@ -11,7 +12,6 @@ import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
 import ListItem from '@mui/material/ListItem'
-import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import MenuIcon from '@mui/icons-material/Menu'
@@ -43,13 +43,10 @@ const Main = styled('main', {
 
 const AppBarSpacer = styled('div')(({ theme }: any) => theme.mixins.toolbar)
 
-const nums: number[] = []
-
-for (let i=0; i<1000; i++) {
-  nums.push(i)
-}
-
 const Layout: FC = ({ children }) => {
+  const theme = useTheme()
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up('md'))
+
   const [open, setOpen] = useState(false)
 
   const handleDrawerOpen = () => {
@@ -63,7 +60,12 @@ const Layout: FC = ({ children }) => {
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <AppBar position="fixed">
-        <Toolbar>
+        <Toolbar
+          sx={{
+            backgroundColor: '#fff',
+            color: '#000'
+          }}
+        >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -73,9 +75,13 @@ const Layout: FC = ({ children }) => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Persistent drawer
-          </Typography>
+          {
+            isLargeScreen && (
+              <Typography variant="h6" noWrap component="div">
+                ENC Project
+              </Typography>
+            )
+          }
         </Toolbar>
       </AppBar>
       <Drawer
@@ -103,20 +109,23 @@ const Layout: FC = ({ children }) => {
       </Drawer>
       <Main open={open}>
         <AppBarSpacer />
-        <Container maxWidth="xl">
-          {
-            nums.map(num => {
-              return (
-                <Typography gutterBottom key={ num }>
-                  {num} this is the home page
-                </Typography>
-              )
-            })
-          }
+        <Container maxWidth="lg">
+          { children }
         </Container>
       </Main>
-      <Box component="footer" sx={{ p: 2, backgroundColor: 'lightgrey', position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 1100 }}> // Updated here
-        <Typography variant="body1">Your Footer Content Here</Typography>
+      <Box
+        component="footer"
+        sx={{
+          p: 2,
+          backgroundColor: '#f8f8f8',
+          position: 'fixed',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1100,
+        }}
+      >
+        <Typography variant="body1">&copy; ENC Project {new Date().getFullYear()}</Typography>
       </Box>
     </Box>
   )

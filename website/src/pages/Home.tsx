@@ -1,7 +1,9 @@
 import React, { FC } from 'react'
 
 import Typography from '@mui/material/Typography'
-import Container from '@mui/material/Container'
+import Box from '@mui/material/Box'
+
+import SerifTypography from '../components/widgets/SerifTypography'
 
 const nums: number[] = []
 
@@ -11,7 +13,10 @@ for (let i=0; i<1000; i++) {
 
 const Home: FC = () => {
   return (
-    <Container maxWidth="sm">
+    <Box>
+      <SerifTypography variant="h3">
+        This is a bold headline
+      </SerifTypography>
       {
         nums.map(num => {
           return (
@@ -21,7 +26,7 @@ const Home: FC = () => {
           )
         })
       }
-    </Container>
+    </Box>
   )
 }
 
