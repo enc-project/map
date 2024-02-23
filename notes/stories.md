@@ -136,6 +136,9 @@ If I know anything it is I know nothing.
 
 They are not bad people - they are just doing really well within the framework.
 
+### a problem with "individualism"
+
+https://www.theguardian.com/commentisfree/2024/feb/22/death-threats-mps-politicians-protesters
 
 ## other things
 
