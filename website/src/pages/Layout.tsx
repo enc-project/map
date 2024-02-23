@@ -1,11 +1,12 @@
 import React, { useState, FC } from 'react'
 import { styled } from '@mui/system'
-import { Theme, CSSObject } from '@mui/material/styles'
+import { CSSObject } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
 import List from '@mui/material/List'
+import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
@@ -13,7 +14,7 @@ import ListItem from '@mui/material/ListItem'
 import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
-import MoreVertIcon from '@mui/icons-material/MoreVert'
+import MenuIcon from '@mui/icons-material/Menu'
 
 interface MainProps {
   open: boolean
@@ -30,17 +31,23 @@ const Main = styled('main', {
     easing: theme.transitions.easing.sharp,
     duration: theme.transitions.duration.leavingScreen,
   }),
-  marginLeft: `-${drawerWidth}px`,
   ...(open && {
+    marginLeft: `${drawerWidth}px`,
     transition: theme.transitions.create('margin', {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    marginLeft: 0,
   }),
+  marginBottom: '56px', // Adjust this based on your footer's height to ensure content isn't hidden behind the footer
 } as CSSObject))
 
 const AppBarSpacer = styled('div')(({ theme }: any) => theme.mixins.toolbar)
+
+const nums: number[] = []
+
+for (let i=0; i<1000; i++) {
+  nums.push(i)
+}
 
 const Layout: FC = ({ children }) => {
   const [open, setOpen] = useState(false)
@@ -54,7 +61,7 @@ const Layout: FC = ({ children }) => {
   }
 
   return (
-    <Box sx={{ display: 'flex' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <AppBar position="fixed">
         <Toolbar>
           <IconButton
@@ -64,7 +71,7 @@ const Layout: FC = ({ children }) => {
             edge="start"
             sx={{ mr: 2, ...(open && { display: 'none' }) }}
           >
-            <MoreVertIcon />
+            <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
             Persistent drawer
@@ -89,21 +96,26 @@ const Layout: FC = ({ children }) => {
         </IconButton>
         <Divider />
         <List>
-          {/* Add your menu items here */}
           <ListItem button>
-            <ListItemIcon>
-              {/* Icon component here */}
-            </ListItemIcon>
             <ListItemText primary="Menu Item 1" />
           </ListItem>
-          {/* Repeat for other items */}
         </List>
       </Drawer>
       <Main open={open}>
         <AppBarSpacer />
-        {children}
+        <Container maxWidth="xl">
+          {
+            nums.map(num => {
+              return (
+                <Typography gutterBottom key={ num }>
+                  {num} this is the home page
+                </Typography>
+              )
+            })
+          }
+        </Container>
       </Main>
-      <Box component="footer" sx={{ p: 2, mt: 'auto', backgroundColor: 'lightgrey' }}>
+      <Box component="footer" sx={{ p: 2, backgroundColor: 'lightgrey', position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 1100 }}> // Updated here
         <Typography variant="body1">Your Footer Content Here</Typography>
       </Box>
     </Box>
