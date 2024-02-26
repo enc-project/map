@@ -172,6 +172,10 @@ https://www.theguardian.com/commentisfree/2024/feb/21/politics-rishi-sunak-keir-
 
 https://www.theguardian.com/politics/2024/feb/25/our-broken-politics-needs-a-major-shake-up-from-pr-voting-to-citizens-assemblies
 
+### UK high streets used to pay tax
+
+https://www.youtube.com/watch?v=_U0wQPMwvVc
+
 ## other things
 
 This is a list of other things we should cover - there are many more but for now here we are:

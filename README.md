@@ -1,10 +1,10 @@
 # enc project
 
-Our political system was invented before electricity.
+Our political system was invented a long time ago.
 
 Now we have the Internet and generative AI.
 
-We can do better than this; but we must challenge the status quo.
+We can do better than this; but we must challenge our thinking.
 
 > I know that I know nothing ([plato](https://en.wikipedia.org/wiki/I_know_that_I_know_nothing))
 

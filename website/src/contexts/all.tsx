@@ -1,4 +1,6 @@
-import { FC } from 'react'
+import React, { FC } from 'react'
+import { ThemeProvider as OriginalThemeProvider } from '@mui/material/styles'
+import theme from '../theme'
 
 import {
   RouterContextProvider,
@@ -12,18 +14,17 @@ import {
   LoadingContextProvider,
 } from './loading'
 
-import {
-  ThemeProviderWrapper,
-} from './theme'
+// we do this because of a strange typescript error whilst trying to render the theme
+const ThemeProvider = OriginalThemeProvider as any
 
 const AllContextProvider: FC = ({ children }) => {
   return (
     <RouterContextProvider>
       <SnackbarContextProvider>
         <LoadingContextProvider>
-          <ThemeProviderWrapper>
+          <ThemeProvider theme={theme}>
             {children}
-          </ThemeProviderWrapper>
+          </ThemeProvider>
         </LoadingContextProvider>
       </SnackbarContextProvider>
     </RouterContextProvider>
