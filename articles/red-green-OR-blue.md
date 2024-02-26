@@ -1,8 +1,8 @@
-## political parties
+## red, green OR blue
 
 Elections have become personality contests.  We are voting for people, not solutions.
 
-We are forced to reduce our complex political views into a single colour; voting red, blue, green or yellow and then hoping that people do what they said they would do.
+We are forced to reduce our complex political views into a single colour; voting red, green OR blue and then hoping that people do what they said they would do (lol).
 
 **ANIMATION OF VOTES TO TOP**
 
@@ -23,3 +23,7 @@ As a software engineers, we learn that when building complex systems, it's impor
 Trying to build a single machine, all in one go, that will solve all the problems simply does not work.
 
 Should we challenge the idea of voting for a political party and instead vote for a group of experts in each field?
+
+Which parts of policy making should not be done this way? (e.g. foreign relations, MI6 etc)
+
+Is the current system of voting for one person to make ALL the decisions working?

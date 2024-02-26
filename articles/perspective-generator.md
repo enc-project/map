@@ -10,5 +10,7 @@ Now we have large language models, we might feed an issue through what we could 
 
 It's job is not to try to persuade you to change your mind, but to remind you that other people have different perspectives.
 
-Do you think this tool would be useful in politics?
+Do you think that current social media algorithms are polarising debate?
+
+Do you think using a perspective generator would help debate?
 

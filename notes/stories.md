@@ -140,6 +140,38 @@ They are not bad people - they are just doing really well within the framework.
 
 https://www.theguardian.com/commentisfree/2024/feb/22/death-threats-mps-politicians-protesters
 
+### ai candidates
+
+https://www.semafor.com/article/02/23/2024/belarusian-opposition-endorses-ai-candidate
+
+### global warming
+
+a.k.a the "put it off until tomorrow" effect:
+
+https://xkcd.com/2889/
+
+### are you a grass?
+
+Gary outlines why the prisioners dilema is being played out on a national scale.
+
+Are you willing to make small sacrifices for the greater good?
+
+Or are you someone who wants to take the easier route - i.e. be a grass?
+
+NOTE: outline how the **total** number of years in prison is the goal here - not how many years for one player.
+
+https://www.youtube.com/watch?v=HezHJKZ47Ck
+
+### being fined for being sick
+
+https://www.theguardian.com/business/2024/feb/25/royal-mail-sued-delivery-drivers-parcelforce-uber-style-gig-economy-legal-case
+
+### reform but within the goldfish bowl
+
+https://www.theguardian.com/commentisfree/2024/feb/21/politics-rishi-sunak-keir-starmer-tories-labour
+
+https://www.theguardian.com/politics/2024/feb/25/our-broken-politics-needs-a-major-shake-up-from-pr-voting-to-citizens-assemblies
+
 ## other things
 
 This is a list of other things we should cover - there are many more but for now here we are:

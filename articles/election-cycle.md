@@ -22,4 +22,4 @@ Rather than wait for an election cycle and then hope the new person makes good d
 
 **ANIMATION OF POLITICS CI**
 
-The technology to do this is now available, do you think it can help politics?
+Do you think we are doing the best job of making decisions as a population?  How could we do better?

@@ -1,31 +1,42 @@
 import React, { FC } from 'react'
 
-import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
-
+import Typography from '@mui/material/Typography'
 import SerifTypography from '../components/widgets/SerifTypography'
-
-const nums: number[] = []
-
-for (let i=0; i<1000; i++) {
-  nums.push(i)
-}
+import NewspaperQuote from '../components/widgets/NewspaperQuote'
 
 const Home: FC = () => {
   return (
     <Box>
-      <SerifTypography variant="h3">
-        This is a bold headline
+      <SerifTypography variant="h3" gutterBottom sx={{mb: 6, mt: 6}}>
+        Our political system was invented <strong>before electricity.</strong>
       </SerifTypography>
-      {
-        nums.map(num => {
-          return (
-            <Typography gutterBottom key={ num }>
-              {num} this is the home page
-            </Typography>
-          )
-        })
-      }
+      <SerifTypography variant="h4" gutterBottom sx={{mb: 6}}>
+        Now we have the Internet and generative AI.
+      </SerifTypography>
+      <SerifTypography variant="h5" gutterBottom sx={{mb: 6}}>
+        We can do better than this; but we <strong>must</strong> challenge our thinking.
+      </SerifTypography>
+      <NewspaperQuote
+        author="Plato"
+        url="https://en.wikipedia.org/wiki/I_know_that_I_know_nothing"
+        sx={{mb: 3}}
+      >
+        I know that I know nothing
+      </NewspaperQuote>
+      <SerifTypography variant="h5" gutterBottom>
+        We are not experts in politics, economics, or any of the other fields that we are discussing.
+      </SerifTypography>
+      <SerifTypography variant="h5" gutterBottom sx={{mb: 6}}>
+        At the same time:
+      </SerifTypography>
+      <NewspaperQuote
+        author="Plato"
+        url="https://en.wikipedia.org/wiki/I_know_that_I_know_nothing"
+        sx={{mb: 3}}
+      >
+        I know that I know nothing
+      </NewspaperQuote>
     </Box>
   )
 }

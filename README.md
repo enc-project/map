@@ -4,11 +4,11 @@ Our political system was invented before electricity.
 
 Now we have the Internet and generative AI.
 
-We can seriously do better if we challenge our thinking.
+We can do better than this; but we must challenge the status quo.
 
 > I know that I know nothing ([plato](https://en.wikipedia.org/wiki/I_know_that_I_know_nothing))
 
-We are not experts in politics, economics, or any of the other fields that we are discussing.
+We are technology experts and don't presume to tell you how to reform the political system.
 
 At the same time:
 
@@ -16,11 +16,12 @@ At the same time:
 
 So, here are some wrong answers to get the conversation started:
 
- * [political parties are a problem](articles/political-parties.md)
+ * [red, green OR blue](articles/red-green-OR-blue.md)
  * [an election cycle takes ages](articles/election-cycle.md)
  * [the perspective generator](articles/perspective-generator.md)
  * [media manipulation](articles/media-manipulation.md)
  * [the wealth gap](articles/wealth-gap.md)
+ * [share ownership](articles/share-ownership.md)
 
 # how to contribute
 

@@ -18,5 +18,5 @@ People can control how their AI behaves because of [fine tuning](https://en.wiki
 
 Removing bias from the news is a very difficult problem.
 
-Do you think it's a problem that we can solve with AI?
+Do you think the media manipulating peoples views is a problem? How might we use AI to help solve this?
 
