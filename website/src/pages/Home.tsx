@@ -1,48 +1,54 @@
 import React, { FC } from 'react'
 
 import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
 import SerifTypography from '../components/widgets/SerifTypography'
-import NewspaperQuote from '../components/widgets/NewspaperQuote'
+import Quote from '../components/articles/Quote'
+import HeadlineStrapline from '../components/articles/HeadlineStrapline'
+
+import { getResponsiveSxAmount } from '../styles'
 
 const Home: FC = () => {
   return (
     <Box>
-      <SerifTypography variant="h3" gutterBottom sx={{mt: 6, mb: 3}}>
-        Trust in politics is broken.
-      </SerifTypography>
-      <SerifTypography variant="h6" gutterBottom sx={{mb: 6}}>
-        Politicans say one thing and then do another.
-      </SerifTypography>
-      <SerifTypography variant="h3" gutterBottom sx={{mt: 6, mb: 3}}>
-        Our political system was invented <strong>before electricity.</strong>
-      </SerifTypography>
-      <SerifTypography variant="h6" gutterBottom sx={{mb: 6}}>
-        Now we have the Internet and generative AI.
-      </SerifTypography>
-      <SerifTypography variant="h5" gutterBottom sx={{mb: 6}}>
-        We can do better than this; but we <strong>must</strong> challenge our thinking.
-      </SerifTypography>
-      <NewspaperQuote
+      <HeadlineStrapline
+        headline="Trust in politics is broken."
+        strapline="Politicans say one thing and then do another."
+      />
+      <HeadlineStrapline
+        headline={ <>Our political system was invented <strong>before electricity.</strong></> }
+        strapline="Now we have the Internet, blockchains and generative AI."
+      />
+      <HeadlineStrapline
+        strapline={ <>We <strong>must</strong> change our approach.</> }
+      />
+      <Quote
         author="Plato"
         url="https://en.wikipedia.org/wiki/I_know_that_I_know_nothing"
-        sx={{mb: 3}}
+        sx={{
+          ml: getResponsiveSxAmount(4),
+          mt: getResponsiveSxAmount(2),
+          mb: getResponsiveSxAmount(3),
+        }}
       >
         I know that I know nothing
-      </NewspaperQuote>
+      </Quote>
       <SerifTypography variant="h5" gutterBottom>
         We are not experts in politics, economics, or any of the other fields that we are discussing.
       </SerifTypography>
-      <SerifTypography variant="h5" gutterBottom sx={{mb: 6}}>
+      <SerifTypography variant="h5" gutterBottom sx={{mb: getResponsiveSxAmount(6)}}>
         At the same time:
       </SerifTypography>
-      <NewspaperQuote
+      <Quote
         author="Plato"
         url="https://en.wikipedia.org/wiki/I_know_that_I_know_nothing"
-        sx={{mb: 3}}
+        sx={{
+          ml: getResponsiveSxAmount(4),
+          mb: getResponsiveSxAmount(3),
+        }}
       >
         I know that I know nothing
-      </NewspaperQuote>
+      </Quote>
+      
     </Box>
   )
 }

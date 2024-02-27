@@ -1,7 +1,7 @@
 import React, { useState, FC } from 'react'
 import styled from '@mui/system/styled'
 import useMediaQuery from '@mui/material/useMediaQuery'
-import { CSSObject, useTheme } from '@mui/material/styles'
+import { useTheme } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import AppBar from '@mui/material/AppBar'
@@ -16,30 +16,7 @@ import ListItemText from '@mui/material/ListItemText'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import MenuIcon from '@mui/icons-material/Menu'
 
-interface MainProps {
-  open: boolean
-}
-
 const drawerWidth = 240
-
-const Main = styled('main', {
-  shouldForwardProp: (prop) => prop !== 'open',
-})<MainProps>(({ theme, open }: any) => ({
-  flexGrow: 1,
-  padding: theme.spacing(3),
-  transition: theme.transitions?.create('margin', {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    marginLeft: `${drawerWidth}px`,
-    transition: theme.transitions.create('margin', {
-      easing: theme.transitions.easing.easeOut,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-  }),
-  marginBottom: '56px', // Adjust this based on your footer's height to ensure content isn't hidden behind the footer
-} as CSSObject))
 
 const AppBarSpacer = styled('div')(({ theme }: any) => theme.mixins.toolbar)
 
@@ -58,7 +35,7 @@ const Layout: FC = ({ children }) => {
   }
 
   return (
-    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100%' }}>
       <AppBar position="fixed">
         <Toolbar
           sx={{
@@ -107,12 +84,17 @@ const Layout: FC = ({ children }) => {
           </ListItem>
         </List>
       </Drawer>
-      <Main open={open}>
+      <Box
+        sx={{
+          flexGrow: 1,
+          marginBottom: '56px',
+        }}
+      >
         <AppBarSpacer />
         <Container maxWidth="lg">
           { children }
         </Container>
-      </Main>
+      </Box>
       <Box
         component="footer"
         sx={{

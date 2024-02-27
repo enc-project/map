@@ -3,6 +3,11 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { SxProps } from '@mui/system'
 
+import {
+  getResponsiveSxAmount,
+  getResponsiveFontSize,
+} from '../../styles'
+
 const NewspaperQuote: FC<{
   author: string,
   url: string,
@@ -21,7 +26,7 @@ const NewspaperQuote: FC<{
         sx={{
           borderLeft: '5px solid #999',
           paddingLeft: 2,
-          p: 3,
+          p: getResponsiveSxAmount(3),
           ml: 0,
           mr: 0,
           mt: 2,
@@ -34,7 +39,7 @@ const NewspaperQuote: FC<{
           variant="body1"
           sx={{
             fontFamily: '"Times New Roman", Times, serif',
-            fontSize: '1.35rem',
+            fontSize: getResponsiveFontSize(24),
             color: '#333',
           }}
         >

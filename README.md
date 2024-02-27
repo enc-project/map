@@ -4,9 +4,9 @@ Trust in politics is broken.
 Politicans say one thing and then do another.
 
 Our [political system](https://en.wikipedia.org/wiki/1708_British_general_election) was invented [before electricity](https://en.wikipedia.org/wiki/Electricity).
-These days we have the Internet and generative AI.
+Now we have the Internet, blockchains and generative AI.
 
-We can do better than this; but we must change our approach.
+We **must** change our approach.
 
 > I know that I know nothing ([plato](https://en.wikipedia.org/wiki/I_know_that_I_know_nothing))
 
