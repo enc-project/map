@@ -8,10 +8,16 @@ import NewspaperQuote from '../components/widgets/NewspaperQuote'
 const Home: FC = () => {
   return (
     <Box>
-      <SerifTypography variant="h3" gutterBottom sx={{mb: 6, mt: 6}}>
+      <SerifTypography variant="h3" gutterBottom sx={{mt: 6, mb: 3}}>
+        Trust in politics is broken.
+      </SerifTypography>
+      <SerifTypography variant="h6" gutterBottom sx={{mb: 6}}>
+        Politicans say one thing and then do another.
+      </SerifTypography>
+      <SerifTypography variant="h3" gutterBottom sx={{mt: 6, mb: 3}}>
         Our political system was invented <strong>before electricity.</strong>
       </SerifTypography>
-      <SerifTypography variant="h4" gutterBottom sx={{mb: 6}}>
+      <SerifTypography variant="h6" gutterBottom sx={{mb: 6}}>
         Now we have the Internet and generative AI.
       </SerifTypography>
       <SerifTypography variant="h5" gutterBottom sx={{mb: 6}}>

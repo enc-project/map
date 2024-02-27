@@ -1,14 +1,16 @@
 # enc project
 
-Our political system was invented a long time ago.
+Trust in politics is broken.
+Politicans say one thing and then do another.
 
-Now we have the Internet and generative AI.
+Our [political system](https://en.wikipedia.org/wiki/1708_British_general_election) was invented [before electricity](https://en.wikipedia.org/wiki/Electricity).
+These days we have the Internet and generative AI.
 
-We can do better than this; but we must challenge our thinking.
+We can do better than this; but we must change our approach.
 
 > I know that I know nothing ([plato](https://en.wikipedia.org/wiki/I_know_that_I_know_nothing))
 
-We are technology experts and don't presume to tell you how to reform the political system.
+We don't presume to tell you how to reform the political system.
 
 At the same time:
 

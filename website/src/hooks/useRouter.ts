@@ -1,11 +1,11 @@
 import { useContext } from 'react'
 
 import {
-  RouterContext,
+  CoreRouterContext,
 } from '../contexts/router'
 
 export const useRouter = () => {
-  const router = useContext(RouterContext)
+  const router = useContext(CoreRouterContext)
   return router
 }
 

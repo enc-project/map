@@ -19,7 +19,7 @@ export interface IRouterContext {
   },
 }
 
-export const RouterContext = createContext<IRouterContext>({
+export const CoreRouterContext = createContext<IRouterContext>({
   name: '',
   params: {},
   render: () => <div>Page Not Found</div>,
@@ -29,16 +29,13 @@ export const RouterContext = createContext<IRouterContext>({
   removeParams: () => {},
 })
 
+const RouterContext = CoreRouterContext as any
+
 export const useRouterContext = (): IRouterContext => {
   const { route } = useRoute()
   const appRoute = useApplicationRoute()
   const meta = useMemo(() => {
     return appRoute.meta
-  }, [
-    appRoute,
-  ])
-  const getTitle = useMemo(() => {
-    return appRoute.getTitle
   }, [
     appRoute,
   ])
@@ -76,7 +73,6 @@ export const useRouterContext = (): IRouterContext => {
     name: route.name,
     params: route.params,
     meta,
-    getTitle,
     navigate,
     setParams,
     removeParams,
@@ -85,7 +81,6 @@ export const useRouterContext = (): IRouterContext => {
     route.name,
     route.params,
     meta,
-    getTitle,
     navigate,
     setParams,
     removeParams,

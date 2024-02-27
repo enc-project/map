@@ -22,6 +22,10 @@ They are making numbers up out of thin air.
 
 https://www.youtube.com/watch?v=8pASpV1XlGA
 
+### people have given up on trust
+
+https://www.youtube.com/watch?v=CW2YbeZbZqs
+
 ### everyone is working so hard
 
 People are good
@@ -172,9 +176,17 @@ https://www.theguardian.com/commentisfree/2024/feb/21/politics-rishi-sunak-keir-
 
 https://www.theguardian.com/politics/2024/feb/25/our-broken-politics-needs-a-major-shake-up-from-pr-voting-to-citizens-assemblies
 
-### UK high streets used to pay tax
+### Britain is in a bad place
 
 https://www.youtube.com/watch?v=_U0wQPMwvVc
+
+https://www.theguardian.com/society/2024/feb/27/i-dont-want-anyone-to-feel-the-despair-i-felt-the-woman-feeding-liverpool-from-an-ice-cream-van
+
+### we are "family"
+
+https://www.reddit.com/r/antiwork/comments/1b0d259/when_did_the_corporate_world_become_such_a_cringe/
+
+<pizza image>
 
 ## other things
 
