@@ -4,6 +4,7 @@ import Box from '@mui/material/Box'
 import SerifTypography from '../components/widgets/SerifTypography'
 import Quote from '../components/articles/Quote'
 import HeadlineStrapline from '../components/articles/HeadlineStrapline'
+import ExternalLink from '../components/articles/ExternalLink'
 
 import { getResponsiveSxAmount } from '../styles'
 
@@ -15,7 +16,9 @@ const Home: FC = () => {
         strapline="Politicans say one thing and then do another."
       />
       <HeadlineStrapline
-        headline={ <>Our political system was invented <strong>before electricity.</strong></> }
+        headline={<>
+          Our <ExternalLink href="https://en.wikipedia.org/wiki/1708_British_general_election">political system</ExternalLink> was invented <ExternalLink href="https://en.wikipedia.org/wiki/Electricity"><strong>before electricity.</strong></ExternalLink>
+        </> }
         strapline="Now we have the Internet, blockchains and generative AI."
       />
       <HeadlineStrapline
@@ -26,18 +29,16 @@ const Home: FC = () => {
         url="https://en.wikipedia.org/wiki/I_know_that_I_know_nothing"
         sx={{
           ml: getResponsiveSxAmount(4),
-          mt: getResponsiveSxAmount(2),
-          mb: getResponsiveSxAmount(3),
         }}
       >
         I know that I know nothing
       </Quote>
-      <SerifTypography variant="h5" gutterBottom>
-        We are not experts in politics, economics, or any of the other fields that we are discussing.
-      </SerifTypography>
-      <SerifTypography variant="h5" gutterBottom sx={{mb: getResponsiveSxAmount(6)}}>
-        At the same time:
-      </SerifTypography>
+      <HeadlineStrapline
+        strapline="We are not experts in politics, economics, or any of the other fields that we are discussing."
+      />
+      <HeadlineStrapline
+        strapline="At the same time:"
+      />
       <Quote
         author="Plato"
         url="https://en.wikipedia.org/wiki/I_know_that_I_know_nothing"

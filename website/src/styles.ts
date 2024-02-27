@@ -1,8 +1,8 @@
 // get a responsive margin or padding amount
 export const getResponsiveSxAmount = (amount: number) => {
   return {
-    xs: Math.round(amount * .65),
-    sm: Math.round(amount * .8),
+    xs: Math.round(amount * .5),
+    sm: Math.round(amount * .75),
     md: Math.round(amount * .9),
     lg: amount,
   }

@@ -3,12 +3,14 @@ import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import { SxProps } from '@mui/system'
 
+import ExternalLink from './ExternalLink'
+
 import {
   getResponsiveSxAmount,
   getResponsiveFontSize,
 } from '../../styles'
 
-const NewspaperQuote: FC<{
+const Quote: FC<{
   author: string,
   url: string,
   sx?: SxProps,
@@ -51,14 +53,14 @@ const NewspaperQuote: FC<{
           textAlign: 'right',
         }}
       >
-        <a href={ url } target="_blank">
+        <ExternalLink href={ url } underlined>
           <Typography variant="caption">
             { author }
           </Typography>
-        </a>
+        </ExternalLink>
       </Box>
     </Box>
   )
 }
 
-export default NewspaperQuote
+export default Quote
