@@ -1,4 +1,5 @@
 import React, { FC } from 'react'
+import { Link } from 'react-router5'
 import { SxProps } from '@mui/system'
 import Box from '@mui/material/Box'
 import SerifTypography from '../widgets/SerifTypography'
@@ -11,6 +12,7 @@ const ArticleRow: FC<{
   title: string,
   description: string,
   image: string,
+  routeName: string,
   imageSize?: number,
   sx?: SxProps,
   mt?: number,
@@ -19,6 +21,7 @@ const ArticleRow: FC<{
   title,
   description,
   image,
+  routeName,
   imageSize = 150,
   mt = 6,
   mb = 6,
@@ -62,10 +65,19 @@ const ArticleRow: FC<{
           variant="body1"
           sx={{
             mt: 0,
-            mb: 3,
+            mb: 1,
           }}
         >
           { description }
+        </SerifTypography>
+        <SerifTypography
+          variant="caption"
+          sx={{
+            mt: 0,
+            mb: 3,
+          }}
+        >
+          <Link routeName={ routeName }>view article</Link>
         </SerifTypography>
       </Cell>
     </Row>
