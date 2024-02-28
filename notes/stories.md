@@ -188,6 +188,28 @@ https://www.reddit.com/r/antiwork/comments/1b0d259/when_did_the_corporate_world_
 
 <pizza image>
 
+### all in the hands of a single person
+
+https://old.reddit.com/r/worldnews/comments/1b1aaxr/poland_warns_us_house_speaker_mike_johnson_youre/
+
+### let them eat flake
+
+https://www.theguardian.com/us-news/2024/feb/27/kelloggs-ceo-cereal-for-dinner
+
+### it's not an entire generation - it's the rich
+
+https://old.reddit.com/r/TikTokCringe/comments/18gc59g/guy_explains_baby_boomers_their_parents_and_trauma/
+
+https://old.reddit.com/r/LeopardsAteMyFace/comments/1b1txpn/generation_who_gutted_unions_retirement_and/
+
+### the "free" market
+
+https://www.theguardian.com/business/2024/feb/28/thames-water-lobbying-government-bills-dividends-fines-breaches-taxpayer-bailout
+
+Point at the banks bailout (show bitcoin image)
+
+Make oranges example
+
 ## other things
 
 This is a list of other things we should cover - there are many more but for now here we are:

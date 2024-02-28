@@ -1,12 +1,12 @@
 # enc project
 
-Trust in politics is broken.
-Politicans say one thing and then do another.
+Trust in politics is eroding.
+Politicans seem to say one thing but then do another.
 
 Our [political system](https://en.wikipedia.org/wiki/1708_British_general_election) was invented [before electricity](https://en.wikipedia.org/wiki/Electricity).
 Now we have the Internet, blockchains and generative AI.
 
-We **must** change our approach.
+We can change this, if enough of us want to.
 
 > I know that I know nothing ([plato](https://en.wikipedia.org/wiki/I_know_that_I_know_nothing))
 
@@ -16,14 +16,15 @@ At the same time:
 
 > to get the right answer on the Internet, first put the wrong answer ([cunningham](https://meta.wikimedia.org/wiki/Cunningham%27s_Law))
 
-So, here are some wrong answers to get the conversation started:
+So, here are some wrong answers to get the conversation started.
+
+If you have any opinions, PLEASE tell your friends, your family, your colleagues.
 
  * [red, green OR blue](articles/red-green-OR-blue.md)
- * [an election cycle takes ages](articles/election-cycle.md)
- * [the perspective generator](articles/perspective-generator.md)
+ * [it's so slow](articles/election-cycle.md)
+ * [perspectives matter](articles/perspective-generator.md)
  * [media manipulation](articles/media-manipulation.md)
- * [the wealth gap](articles/wealth-gap.md)
- * [share ownership](articles/share-ownership.md)
+ * [data driven decisions](articles/data-driven-decisions.md)
 
 # how to contribute
 

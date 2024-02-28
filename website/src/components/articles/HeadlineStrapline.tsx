@@ -1,40 +1,58 @@
-import React, { FC, ReactElement } from 'react'
+import React, { FC, ReactElement, useMemo } from 'react'
 import { SxProps } from '@mui/system'
 import SerifTypography from '../widgets/SerifTypography'
 
 import { getResponsiveSxAmount } from '../../styles'
 import useTypography from '../../hooks/useTypography'
 
-// what we put on an element if it's the only one
-const singleSX: SxProps = {
-  mt: getResponsiveSxAmount(6),
-  mb: getResponsiveSxAmount(6)
-}
-
-// if we have both then we use top and bottom
-const topSx: SxProps = {
-  mt: getResponsiveSxAmount(6),
-  mb: getResponsiveSxAmount(2),
-}
-
-const bottomSx: SxProps = {
-  mb: getResponsiveSxAmount(6),
-}
-
 const HeadlineStrapline: FC<{
   headline?: ReactElement | string,
   strapline?: ReactElement | string,
+  mt?: number,
+  mm?: number,
+  mb?: number,
 }> = ({
   headline,
   strapline,
+  mt = 6,
+  mm = 2,
+  mb = 6,
 }) => {
   const {
     headlineVariant,
     straplineVariant,
   } = useTypography()
 
-  const headlineSx = headline && strapline ? topSx : singleSX
-  const straplineSx = headline && strapline ? bottomSx : singleSX
+  const sx = useMemo(() => {
+    // what we put on an element if it's the only one
+    const single: SxProps = {
+      mt: getResponsiveSxAmount(mt),
+      mb: getResponsiveSxAmount(mb)
+    }
+
+    // if we have both then we use top and bottom
+    const top: SxProps = {
+      mt: getResponsiveSxAmount(mt),
+      mb: getResponsiveSxAmount(mm),
+    }
+    const bottom: SxProps = {
+      mb: getResponsiveSxAmount(mb),
+    }
+
+    return {
+      single,
+      top,
+      bottom,
+    }
+  }, [
+    mt,
+    mm,
+    mb,
+  ])
+
+
+  const headlineSx = headline && strapline ? sx.top : sx.single
+  const straplineSx = headline && strapline ? sx.bottom : sx.single
 
   return (
     <>

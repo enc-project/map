@@ -28,6 +28,15 @@ const routes: IApplicationRoute[] = [{
   render: () => (
       <Home />
   ),
+}, {
+  name: 'red-green-or-blue',
+  path: '/articles/red-green-or-blue',
+  meta: {
+    title: 'red, green, OR blue?',
+  },
+  render: () => (
+      <Home />
+  ),
 }, NOT_FOUND_ROUTE]
 
 export const router = createRouter(routes, {

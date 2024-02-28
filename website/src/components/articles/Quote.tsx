@@ -14,10 +14,12 @@ const Quote: FC<{
   author: string,
   url: string,
   sx?: SxProps,
+  padding?: number,
 }> = ({
   author,
   url,
   sx = {},
+  padding = 2,
   children,
 }) => {
   return (
@@ -26,9 +28,9 @@ const Quote: FC<{
     >
       <Box
         sx={{
-          borderLeft: '5px solid #999',
+          borderLeft: '5px solid #6666aa',
           paddingLeft: 2,
-          p: getResponsiveSxAmount(3),
+          p: getResponsiveSxAmount(padding),
           ml: 0,
           mr: 0,
           mt: 2,
