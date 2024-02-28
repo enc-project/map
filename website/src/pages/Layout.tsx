@@ -1,4 +1,5 @@
 import React, { useState, FC } from 'react'
+import { Link } from 'react-router5'
 import styled from '@mui/system/styled'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material/styles'
@@ -6,23 +7,31 @@ import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import AppBar from '@mui/material/AppBar'
 import Toolbar from '@mui/material/Toolbar'
-import List from '@mui/material/List'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import Divider from '@mui/material/Divider'
 import IconButton from '@mui/material/IconButton'
+import Button from '@mui/material/Button'
+import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemText from '@mui/material/ListItemText'
+import ListItemAvatar from '@mui/material/ListItemAvatar'
+import Avatar from '@mui/material/Avatar'
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
 import MenuIcon from '@mui/icons-material/Menu'
 
-const drawerWidth = 240
+import { ARTICLES } from '../data'
+
+import useRouter from '../hooks/useRouter'
+
+const drawerWidth = 320
 
 const AppBarSpacer = styled('div')(({ theme }: any) => theme.mixins.toolbar)
 
 const Layout: FC = ({ children }) => {
   const theme = useTheme()
   const isLargeScreen = useMediaQuery(theme.breakpoints.up('md'))
+  const { navigate } = useRouter()
 
   const [open, setOpen] = useState(false)
 
@@ -40,7 +49,11 @@ const Layout: FC = ({ children }) => {
         <Toolbar
           sx={{
             backgroundColor: '#fff',
-            color: '#000'
+            color: '#000',
+            '& a': {
+              textDecoration: 'none',
+              color: '#000',
+            },
           }}
         >
           <IconButton
@@ -52,10 +65,22 @@ const Layout: FC = ({ children }) => {
           >
             <MenuIcon />
           </IconButton>
+          <Link routeName="home">
+            <Box
+              component="img"
+              src="/img/logo.png"
+              sx={{
+                width: '38px',
+                mr: 2,
+              }}
+            />
+          </Link>
           {
             isLargeScreen && (
               <Typography variant="h6" noWrap component="div">
-                ENC Project
+                <Link routeName="home">
+                  ENC Project
+                </Link>
               </Typography>
             )
           }
@@ -65,6 +90,7 @@ const Layout: FC = ({ children }) => {
         sx={{
           width: drawerWidth,
           flexShrink: 0,
+          zIndex: 1500,
           '& .MuiDrawer-paper': {
             width: drawerWidth,
             boxSizing: 'border-box',
@@ -74,16 +100,54 @@ const Layout: FC = ({ children }) => {
         anchor="left"
         open={open}
       >
-        <IconButton onClick={handleDrawerClose}>
-          <ChevronLeftIcon />
-        </IconButton>
+        <Button onClick={handleDrawerClose}>
+          <ChevronLeftIcon /> Close
+        </Button>
         <Divider />
         <List>
-          <ListItem button>
-            <ListItemText primary="Menu Item 1" />
+          <ListItem button onClick={() => {
+            navigate('home')
+            handleDrawerClose()
+          }}>
+            <ListItemAvatar>
+              <Avatar alt="ENC Project" src="/img/logo.png" sx={{ border: '1px solid #000' }}/>
+            </ListItemAvatar>
+            <ListItemText
+              primary="Home"
+            />
           </ListItem>
+          <Divider />
+          {
+            ARTICLES.map((article, index) => (  
+              <ListItem button key={ index } onClick={() => {
+                navigate(article.routeName)
+                handleDrawerClose()
+              }}>
+                <ListItemAvatar>
+                  <Avatar alt={ article.title } src={ article.image } sx={{ border: '1px solid #000' }}/>
+                </ListItemAvatar>
+                <ListItemText
+                  primary={ article.title }
+                />
+              </ListItem>
+            ))
+          }
         </List>
       </Drawer>
+      <Box
+        sx={{
+          display: open ? 'block' : 'none',
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(255, 255, 255, 0.7)',
+          backdropFilter: 'blur(3px)',
+          zIndex: 1200,
+        }}
+        onClick={handleDrawerClose}
+      />
       <Box
         sx={{
           flexGrow: 1,

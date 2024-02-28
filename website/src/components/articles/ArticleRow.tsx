@@ -7,21 +7,16 @@ import Row from '../widgets/Row'
 import Cell from '../widgets/Cell'
 
 import { getResponsiveSxAmount } from '../../styles'
+import { IArticle } from '../../types'
 
 const ArticleRow: FC<{
-  title: string,
-  description: string,
-  image: string,
-  routeName: string,
+  article: IArticle,
   imageSize?: number,
   sx?: SxProps,
   mt?: number,
   mb?: number,
 }> = ({
-  title,
-  description,
-  image,
-  routeName,
+  article,
   imageSize = 150,
   mt = 6,
   mb = 6,
@@ -37,17 +32,24 @@ const ArticleRow: FC<{
 
   return (
     <Row sx={ rowSx }>
-      <Cell>
-        <Box
-          component="img"
-          src={ image }
-          alt={ title }
-          sx={{
-            width: getResponsiveSxAmount(imageSize),
-            height: 'auto',
-            border: '1px solid #333'
-          }}
-        />
+      <Cell
+        sx={{
+          pt: getResponsiveSxAmount(1),
+        }}
+      >
+        <Link routeName={ article.routeName }>
+          <Box
+            component="img"
+            src={ article.image }
+            alt={ article.title }
+            sx={{
+              width: getResponsiveSxAmount(imageSize),
+              height: 'auto',
+              border: '1px solid #333',
+              boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)', // Add drop shadow here
+            }}
+          />
+        </Link>
       </Cell>
       <Cell grow sx={{
         pl: getResponsiveSxAmount(2),
@@ -57,9 +59,14 @@ const ArticleRow: FC<{
           sx={{
             mt: 0,
             mb: 1,
+            '& a': {
+              textDecoration: 'none',
+            },
           }}
         >
-          { title }
+          <Link routeName={ article.routeName }>
+            { article.title }
+          </Link>
         </SerifTypography>
         <SerifTypography
           variant="body1"
@@ -68,7 +75,7 @@ const ArticleRow: FC<{
             mb: 1,
           }}
         >
-          { description }
+          { article.description }
         </SerifTypography>
         <SerifTypography
           variant="caption"
@@ -77,7 +84,7 @@ const ArticleRow: FC<{
             mb: 3,
           }}
         >
-          <Link routeName={ routeName }>view article</Link>
+          <Link routeName={ article.routeName }>view article</Link>
         </SerifTypography>
       </Cell>
     </Row>
