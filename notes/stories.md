@@ -128,6 +128,8 @@ People who choose not to or cannot work are paid the baseline which is as comfor
 
 Working earns on top but baseline is comfortable because no one is taking from the top because there are no companies any more because AI runs those.
 
+https://twitter.com/Rainmaker1973/status/1762911388781945105
+
 ### chartism
 
 https://en.wikipedia.org/wiki/Chartism
