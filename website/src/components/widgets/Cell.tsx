@@ -1,8 +1,9 @@
 import React, { FC, useMemo } from 'react'
-import { useTheme, Breakpoint } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
+import { Breakpoint } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import { SxProps } from '@mui/system'
+
+import useIsLargeScreen from '../../hooks/useIsLargeScreen'
 
 const Cell: FC<{
   flexGrow?: number,
@@ -16,8 +17,7 @@ const Cell: FC<{
   sx = {},
   children,
 }) => {
-  const theme = useTheme()
-  const isLarge = useMediaQuery(theme.breakpoints.up(breakpoint || 'md'))
+  const isLarge = useIsLargeScreen()
 
   const useFlexGrow = useMemo(() => {
     const useSx = sx as any

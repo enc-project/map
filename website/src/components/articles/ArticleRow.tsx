@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { Link } from 'react-router5'
+import Avatar from '@mui/material/Avatar'
 import { SxProps } from '@mui/system'
 import Box from '@mui/material/Box'
 import SerifTypography from '../widgets/SerifTypography'
@@ -38,15 +39,14 @@ const ArticleRow: FC<{
         }}
       >
         <Link routeName={ article.routeName }>
-          <Box
-            component="img"
-            src={ article.image }
+          <Avatar
             alt={ article.title }
+            src={ article.image }
             sx={{
-              width: getResponsiveSxAmount(imageSize),
-              height: 'auto',
               border: '1px solid #333',
-              boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)', // Add drop shadow here
+              width: getResponsiveSxAmount(imageSize),
+              height: getResponsiveSxAmount(imageSize),
+              boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)',
             }}
           />
         </Link>

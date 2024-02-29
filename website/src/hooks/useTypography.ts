@@ -1,13 +1,11 @@
-import { useTheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
+import useIsLargeScreen from './useIsLargeScreen'
 
 export const useTypography = () => {
-  const theme = useTheme()
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'))
+  const isLargeScreen = useIsLargeScreen()
   
   return {
-    headlineVariant: isSmallScreen ? "h4" : "h3" as any,
-    straplineVariant: isSmallScreen ? "h6" : "h5" as any,
+    headlineVariant: isLargeScreen ? "h3" : "h4" as any,
+    straplineVariant: isLargeScreen ? "h5" : "h6" as any,
   }
 }
 

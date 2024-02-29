@@ -1,8 +1,6 @@
 import React, { useState, FC } from 'react'
 import { Link } from 'react-router5'
 import styled from '@mui/system/styled'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import { useTheme } from '@mui/material/styles'
 import Box from '@mui/material/Box'
 import Drawer from '@mui/material/Drawer'
 import AppBar from '@mui/material/AppBar'
@@ -22,6 +20,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 
 import { ARTICLES } from '../data'
 
+import useIsLargeScreen from '../hooks/useIsLargeScreen'
 import useRouter from '../hooks/useRouter'
 
 const drawerWidth = 320
@@ -29,8 +28,7 @@ const drawerWidth = 320
 const AppBarSpacer = styled('div')(({ theme }: any) => theme.mixins.toolbar)
 
 const Layout: FC = ({ children }) => {
-  const theme = useTheme()
-  const isLargeScreen = useMediaQuery(theme.breakpoints.up('md'))
+  const isLargeScreen = useIsLargeScreen()
   const { navigate } = useRouter()
 
   const [open, setOpen] = useState(false)
@@ -110,7 +108,7 @@ const Layout: FC = ({ children }) => {
             handleDrawerClose()
           }}>
             <ListItemAvatar>
-              <Avatar alt="ENC Project" src="/img/logo.png" sx={{ border: '1px solid #000' }}/>
+              <Avatar alt="ENC Project" src="/img/logo.png" sx={{ border: '1px solid #333' }}/>
             </ListItemAvatar>
             <ListItemText
               primary="Home"
@@ -124,7 +122,7 @@ const Layout: FC = ({ children }) => {
                 handleDrawerClose()
               }}>
                 <ListItemAvatar>
-                  <Avatar alt={ article.title } src={ article.image } sx={{ border: '1px solid #000' }}/>
+                  <Avatar alt={ article.title } src={ article.image } sx={{ border: '1px solid #333' }}/>
                 </ListItemAvatar>
                 <ListItemText
                   primary={ article.title }
