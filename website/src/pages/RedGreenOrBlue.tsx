@@ -1,5 +1,5 @@
 import React, { FC, useMemo, useRef } from 'react'
-
+import { SxProps } from '@mui/system'
 import Box from '@mui/material/Box'
 import ArticleHeader from '../components/articles/ArticleHeader'
 import Paragraph from '../components/articles/Paragraph'
@@ -91,8 +91,16 @@ const RedGreenOrBlue: FC = () => {
   const animationRef = useRef<HTMLDivElement>(null)
   const article = useMemo(() => getArticle('red-green-or-blue'), [])
   const scrollPercentage = useScrollPercentage(animationRef)
-  console.log('--------------------------------------------')
-  console.log(scrollPercentage)
+  // console.log('--------------------------------------------')
+  // console.log(scrollPercentage)
+
+  const animationContainerSX = useMemo<SxProps>(() => {
+    return {
+      position: scrollPercentage == 0 ? 'relative' : 'relative',
+    }
+  }, [
+    scrollPercentage,
+  ])
   return (
     <Box>
       <ArticleHeader
@@ -114,9 +122,9 @@ const RedGreenOrBlue: FC = () => {
         This leaves the leaders of political parties in a powerful position, the decision making comes from the top and all MP's are supposed to "get in line".
       </Paragraph>
       <Paragraph>
-        If we could perhaps pay to have <a href="https://www.bbc.co.uk/news/uk-politics-43448559" target="_blank">a game of tennis</a> with the leader of a party, we could have a dis-proportionate influence on the actual decisions made.
+        If we could perhaps pay to have <a href="https://www.bbc.co.uk/news/uk-politics-28158479" target="_blank">a game of tennis</a> with the leader of a party, we could have a dis-proportionate influence on the actual decisions made.
       </Paragraph>
-
+{/* 
       <Chunk />
       <Chunk />
       <Chunk />
@@ -127,11 +135,22 @@ const RedGreenOrBlue: FC = () => {
       <Box
         ref={ animationRef }
         sx={{
-          backgroundColor: 'red',
           height: '3000px',
+          position: 'relative',
         }}
       >
-        Here is the content
+        <Box
+          ref={ animationRef }
+          sx={{
+            backgroundColor: 'red',
+            height: '20px',
+            width: `${scrollPercentage}%`,
+            ...animationContainerSX,
+          }}
+        >
+          Here is the content
+        </Box>
+        
       </Box>
 
       <Chunk />
@@ -140,7 +159,7 @@ const RedGreenOrBlue: FC = () => {
       <Chunk />
       <Chunk />
       <Chunk />
-      
+       */}
       
     </Box>
   )
