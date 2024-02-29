@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { SxProps } from '@mui/system'
 import SerifTypography from '../widgets/SerifTypography'
 
-import { getResponsiveSxAmount } from '../../styles'
+import { getResponsiveSxAmount, getResponsiveFontSize } from '../../styles'
 
 const Paragraph: FC<{
   mt?: number,
@@ -10,13 +10,14 @@ const Paragraph: FC<{
   sx?: SxProps,
 }> = ({
   mt = 1,
-  mb = 1,
+  mb = 2,
   sx = {},
   children,
 }) => {
   const useSx = {
     mt: getResponsiveSxAmount(mt),
     mb: getResponsiveSxAmount(mb),
+    fontSize: getResponsiveFontSize(22),
     ...sx,
   }
   return (
