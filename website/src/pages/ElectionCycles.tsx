@@ -1,13 +1,17 @@
 import React, { FC } from 'react'
 
 import Box from '@mui/material/Box'
-import HeadlineStrapline from '../components/articles/HeadlineStrapline'
+import ArticleHeader from '../components/articles/ArticleHeader'
+
+import { getArticle } from '../data'
+
+const ARTICLE = getArticle('election-cycles')
 
 const ElectionCycles: FC = () => {
   return (
     <Box>
-      <HeadlineStrapline
-        headline="It's sooo slow..."
+      <ArticleHeader
+        article={ ARTICLE }
       />
     </Box>
   )

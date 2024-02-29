@@ -1,13 +1,17 @@
 import React, { FC } from 'react'
 
 import Box from '@mui/material/Box'
-import HeadlineStrapline from '../components/articles/HeadlineStrapline'
+import ArticleHeader from '../components/articles/ArticleHeader'
+
+import { getArticle } from '../data'
+
+const ARTICLE = getArticle('red-green-or-blue')
 
 const RedGreenOrBlue: FC = () => {
   return (
     <Box>
-      <HeadlineStrapline
-        headline="red, green OR blue?"
+      <ArticleHeader
+        article={ ARTICLE }
       />
     </Box>
   )

@@ -34,3 +34,14 @@ export const ARTICLES: IArticle[] = [
     image: '/img/article-headers/data-driven-decisions.jpg',
   },
 ]
+
+export const getArticle = (id: string): IArticle => {
+  const article = ARTICLES.find(article => article.routeName === id)
+  if(article) return article
+  return {
+    routeName: 'home',
+    title: 'Home',
+    description: 'Home',
+    image: '/img/logo.png',
+  }
+}

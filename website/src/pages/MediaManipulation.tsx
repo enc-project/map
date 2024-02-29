@@ -1,13 +1,17 @@
 import React, { FC } from 'react'
 
 import Box from '@mui/material/Box'
-import HeadlineStrapline from '../components/articles/HeadlineStrapline'
+import ArticleHeader from '../components/articles/ArticleHeader'
+
+import { getArticle } from '../data'
+
+const ARTICLE = getArticle('media-manipulation')
 
 const MediaManipulation: FC = () => {
   return (
     <Box>
-      <HeadlineStrapline
-        headline="Media manipulation"
+      <ArticleHeader
+        article={ ARTICLE }
       />
     </Box>
   )

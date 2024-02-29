@@ -27,13 +27,13 @@ const Home: FC = () => {
         strapline="We can change this, if enough of us want to."
       />
       <Quote
-        author="Plato"
+        author="[source]"
         url="https://en.wikipedia.org/wiki/I_know_that_I_know_nothing"
         sx={{
           ml: getResponsiveSxAmount(4),
         }}
       >
-        I know that I know nothing
+        I know that I know nothing...
       </Quote>
       <HeadlineStrapline
         strapline="We don't presume to tell you how to reform the political system."
@@ -45,14 +45,14 @@ const Home: FC = () => {
         mt={ 3 }
       />
       <Quote
-        author="Cunningham"
+        author="[source]"
         url="https://meta.wikimedia.org/wiki/Cunningham%27s_Law)"
         sx={{
           ml: getResponsiveSxAmount(4),
           mb: getResponsiveSxAmount(3),
         }}
       >
-        To get the right answer on the Internet, first put the wrong answer
+        To get the right answer on the Internet, first put the wrong answer...
       </Quote>
       <HeadlineStrapline
         strapline="So, here are some wrong answers to get the conversation started."
