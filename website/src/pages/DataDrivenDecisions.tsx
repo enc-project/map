@@ -1,17 +1,16 @@
-import React, { FC } from 'react'
+import React, { FC, useMemo } from 'react'
 
 import Box from '@mui/material/Box'
 import ArticleHeader from '../components/articles/ArticleHeader'
 
 import { getArticle } from '../data'
 
-const ARTICLE = getArticle('data-driven-decisions')
-
 const DataDrivenDecisions: FC = () => {
+  const article = useMemo(() => getArticle('data-driven-decisions'), [])
   return (
     <Box>
       <ArticleHeader
-        article={ ARTICLE }
+        article={ article }
       />
     </Box>
   )

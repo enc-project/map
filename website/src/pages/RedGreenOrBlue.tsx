@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useMemo } from 'react'
 
 import Box from '@mui/material/Box'
 import ArticleHeader from '../components/articles/ArticleHeader'
@@ -7,13 +7,12 @@ import Paragraph from '../components/articles/Paragraph'
 import { getArticle } from '../data'
 import { getResponsiveSxAmount } from '../styles'
 
-const ARTICLE = getArticle('red-green-or-blue')
-
 const RedGreenOrBlue: FC = () => {
+  const article = useMemo(() => getArticle('red-green-or-blue'), [])
   return (
     <Box>
       <ArticleHeader
-        article={ ARTICLE }
+        article={ article }
       />
       <Paragraph>
         Test

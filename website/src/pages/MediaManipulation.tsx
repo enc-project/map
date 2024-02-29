@@ -1,17 +1,16 @@
-import React, { FC } from 'react'
+import React, { FC, useMemo } from 'react'
 
 import Box from '@mui/material/Box'
 import ArticleHeader from '../components/articles/ArticleHeader'
 
 import { getArticle } from '../data'
 
-const ARTICLE = getArticle('media-manipulation')
-
 const MediaManipulation: FC = () => {
+  const article = useMemo(() => getArticle('media-manipulation'), [])
   return (
     <Box>
       <ArticleHeader
-        article={ ARTICLE }
+        article={ article }
       />
     </Box>
   )

@@ -8,6 +8,8 @@ import HeadlineStrapline from './HeadlineStrapline'
 
 import { getResponsiveSxAmount } from '../../styles'
 
+import useIsLargeScreen from '../../hooks/useIsLargeScreen'
+
 import {
   IArticle,
 } from '../../types'
@@ -19,39 +21,46 @@ const ArticleHeader: FC<{
   article,
   sx = {},
 }) => {
+  const isLargeScreen = useIsLargeScreen()
   return (
     <Row sx={ sx }>
-      <Cell
-        sx={{
-          mr: getResponsiveSxAmount(3),
-        }}
-      >
-        <Avatar
-          alt={ article.title }
-          src={ article.image }
-          sx={{
-            border: '1px solid #333',
-            width: getResponsiveSxAmount(60),
-            height: getResponsiveSxAmount(60),
-            boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)',
-          }}
-        /> 
-      </Cell>
-      <Cell
-        sx={{
-          '& a': {
-            textDecoration: 'none',
-          }
-        }}
-      >
-        <HeadlineStrapline
-          headline={(
-            <>
-              <Link routeName="home">ENC</Link>&nbsp;:&nbsp;
-            </>
-          )}
-        />
-      </Cell>
+      {
+        isLargeScreen && (
+          <>
+            <Cell
+              sx={{
+                mr: getResponsiveSxAmount(3),
+              }}
+            >
+              <Avatar
+                alt={ article.title }
+                src={ article.image }
+                sx={{
+                  border: '1px solid #333',
+                  width: getResponsiveSxAmount(60),
+                  height: getResponsiveSxAmount(60),
+                  boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)',
+                }}
+              /> 
+            </Cell>
+            <Cell
+              sx={{
+                '& a': {
+                  textDecoration: 'none',
+                }
+              }}
+            >
+              <HeadlineStrapline
+                headline={(
+                  <>
+                    <Link routeName="home">ENC</Link>&nbsp;:&nbsp;
+                  </>
+                )}
+              />
+            </Cell>
+          </>
+        )
+      }
       <Cell grow>
         <HeadlineStrapline
           headline={ article.title }
