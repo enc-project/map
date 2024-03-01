@@ -1,26 +1,34 @@
-import { useState, useEffect, useRef } from 'react'
-
+import { useEffect } from 'react'
 import useThrottledState from './useThrottledState'
 
 interface ScrollPercentageHook {
-  (ref: React.RefObject<HTMLDivElement>): number
+  (
+    containerRef: React.RefObject<HTMLDivElement>,
+    contentRef: React.RefObject<HTMLDivElement>,
+    yOffset?: number,
+  ): number
 }
 
-const useScrollPercentage: ScrollPercentageHook = (ref) => {
-  const [percentageScrolled, setPercentageScrolled] = useThrottledState<number>(0)
+const useScrollPercentage: ScrollPercentageHook = (containerRef, contentRef, yOffset = 0) => {
+  const [percentageScrolled, setPercentageScrolled] = useThrottledState<number>(0, 300, (oldValue: number, newValue: number) => {
+    if(oldValue == 0 && newValue != 0) return true
+    if(newValue == 100 && oldValue != 100) return true
+    return false
+  })
 
   const handleScroll = () => {
-    if (!ref.current) return
+    if (!containerRef.current) return
+    if (!contentRef.current) return
 
-    const element = ref.current
-    const viewportHeight = window.innerHeight
+    const element = containerRef.current
     const scrollPosition = window.scrollY
     const elementOffsetTop = element.offsetTop
     const elementHeight = element.offsetHeight
+    const contentHeight = contentRef.current.offsetHeight
+    const maxScrollableDistance = elementHeight - contentHeight
 
-    // Determine the positions when the top of the div passes the top of the viewport and when the bottom of the div passes the bottom of the viewport.
-    const startScrollPosition = elementOffsetTop
-    const endScrollPosition = elementOffsetTop + elementHeight - viewportHeight
+    const startScrollPosition = elementOffsetTop - yOffset
+    const endScrollPosition = startScrollPosition + maxScrollableDistance
 
     // Check if the div is completely out of view: above or below the viewport.
     if (scrollPosition < startScrollPosition) {
@@ -33,7 +41,6 @@ const useScrollPercentage: ScrollPercentageHook = (ref) => {
         // The div is now starting to pass the top of the viewport or has started to be hidden by the bottom.
         // Adjust the scroll percentage to account for the viewport height.
         const effectiveScrollDistance = scrollPosition - startScrollPosition
-        const maxScrollableDistance = elementHeight - viewportHeight // Total scrollable distance within the element considering the viewport height.
         const percentage = (effectiveScrollDistance / maxScrollableDistance) * 100
         setPercentageScrolled(Math.min(Math.max(percentage, 0), 100))
     }
@@ -41,14 +48,14 @@ const useScrollPercentage: ScrollPercentageHook = (ref) => {
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true })
-
-    // Trigger initial check in case the element is already in view
     handleScroll()
-
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [ref]) // Only re-run the effect if ref changes
+  }, [
+    containerRef,
+    contentRef,
+  ])
 
   return percentageScrolled
 }

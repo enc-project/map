@@ -1,12 +1,27 @@
 import { useState, useRef, useEffect } from 'react'
 
-function useThrottledState<T>(initialValue: T, delay = 300): [T, (newValue: T) => void] {
+function useThrottledState<T>(
+  initialValue: T,
+  delay = 300,
+  // add optional function that accepts (T, T) and returns boolean
+  // to determine if the new value should be set immediately
+  shouldUpdateImmediately = (oldValue: T, newValue: T) => false,
+): [T, (newValue: T) => void] {
   const [value, setValue] = useState<T>(initialValue)
   const lastUpdated = useRef<number>(Date.now())
   const pendingValue = useRef<T | null>(null)
   const timeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   const setThrottledValue = (newValue: T): void => {
+    if (shouldUpdateImmediately(value, newValue)) {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+        lastUpdated.current = Date.now()
+        timeoutRef.current = null
+      }
+      setValue(newValue)
+      return
+    }
     const now = Date.now()
     const timeSinceLastUpdate = now - lastUpdated.current
     

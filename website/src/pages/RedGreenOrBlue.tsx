@@ -88,19 +88,36 @@ const Chunk: FC = () => {
 }
 
 const RedGreenOrBlue: FC = () => {
-  const animationRef = useRef<HTMLDivElement>(null)
+  const animationContainerRef = useRef<HTMLDivElement>(null)
+  const animationContentRef = useRef<HTMLDivElement>(null)
   const article = useMemo(() => getArticle('red-green-or-blue'), [])
-  const scrollPercentage = useScrollPercentage(animationRef)
-  // console.log('--------------------------------------------')
-  // console.log(scrollPercentage)
-
-  const animationContainerSX = useMemo<SxProps>(() => {
-    return {
-      position: scrollPercentage == 0 ? 'relative' : 'relative',
+  const scrollPercentage = useScrollPercentage(animationContainerRef, animationContentRef, 64)
+  const animationContentSX = useMemo<SxProps>(() => {
+    if (!animationContainerRef.current) return {}
+    if(scrollPercentage > 0 && scrollPercentage < 100) {
+      return {
+        position: 'fixed',
+        top: '64px',
+        left: animationContainerRef.current.offsetLeft,
+        width: animationContainerRef.current.offsetWidth,
+      }
+    } else if(scrollPercentage >= 100) {
+      return {
+        position: 'absolute',
+        bottom: '0',
+        left: '0',
+        width: '100%',
+      }
+    } else {
+      return {
+        position: 'relative',
+      }
     }
   }, [
+    animationContainerRef.current,
     scrollPercentage,
   ])
+
   return (
     <Box>
       <ArticleHeader
@@ -124,31 +141,27 @@ const RedGreenOrBlue: FC = () => {
       <Paragraph>
         If we could perhaps pay to have <a href="https://www.bbc.co.uk/news/uk-politics-28158479" target="_blank">a game of tennis</a> with the leader of a party, we could have a dis-proportionate influence on the actual decisions made.
       </Paragraph>
-{/* 
-      <Chunk />
-      <Chunk />
-      <Chunk />
-      <Chunk />
-      <Chunk />
+
       <Chunk />
 
       <Box
-        ref={ animationRef }
+        ref={ animationContainerRef }
         sx={{
           height: '3000px',
           position: 'relative',
+          border: '1px solid red',
         }}
       >
         <Box
-          ref={ animationRef }
+          ref={ animationContentRef }
           sx={{
             backgroundColor: 'red',
-            height: '20px',
-            width: `${scrollPercentage}%`,
-            ...animationContainerSX,
+            height: '100px',
+            fontSize: '3em',
+            ...animationContentSX
           }}
         >
-          Here is the content
+          { Math.round(scrollPercentage) }%
         </Box>
         
       </Box>
@@ -159,7 +172,7 @@ const RedGreenOrBlue: FC = () => {
       <Chunk />
       <Chunk />
       <Chunk />
-       */}
+      
       
     </Box>
   )
