@@ -16,15 +16,20 @@ const Home: FC = () => {
       <HeadlineStrapline
         headline="Trust in politics is eroding."
         strapline="Politicans seem to say one thing but then do another."
+        headlineVariant="h2"
+        straplineVariant="h5"
       />
       <HeadlineStrapline
         headline={<>
           Our <ExternalLink href="https://en.wikipedia.org/wiki/1708_British_general_election">political system</ExternalLink> was invented <ExternalLink href="https://en.wikipedia.org/wiki/Electricity"><strong>before electricity.</strong></ExternalLink>
         </> }
         strapline="Now we have the Internet, blockchains and generative AI."
+        headlineVariant="h2"
+        straplineVariant="h5"
       />
       <HeadlineStrapline
         strapline="We can change this, if enough of us want to."
+        straplineVariant="h5"
       />
       <Quote
         author="[source]"
@@ -37,11 +42,13 @@ const Home: FC = () => {
       </Quote>
       <HeadlineStrapline
         strapline="We don't presume to tell you how to reform the political system."
+        straplineVariant="h5"
         mt={ 3 }
         mb={ 3 }
       />
       <HeadlineStrapline
         strapline="At the same time:"
+        straplineVariant="h5"
         mt={ 3 }
       />
       <Quote
@@ -56,16 +63,19 @@ const Home: FC = () => {
       </Quote>
       <HeadlineStrapline
         strapline="So, here are some wrong answers to get the conversation started."
+        straplineVariant="h5"
         mt={ 3 }
         mb={ 3 }
       />
       <HeadlineStrapline
         strapline="If you have opinions, we implore you to tell your friends, your family, your colleagues."
+        straplineVariant="h5"
         mt={ 3 }
         mb={ 3 }
       />
       <HeadlineStrapline
         strapline="We are running out of time."
+        straplineVariant="h5"
         mt={ 3 }
       />
       <Divider />

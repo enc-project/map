@@ -18,7 +18,7 @@ const ArticleRow: FC<{
   mb?: number,
 }> = ({
   article,
-  imageSize = 150,
+  imageSize = 300,
   mt = 6,
   mb = 6,
   sx = {},
@@ -46,16 +46,17 @@ const ArticleRow: FC<{
               border: '1px solid #333',
               width: getResponsiveSxAmount(imageSize),
               height: getResponsiveSxAmount(imageSize),
-              boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)',
             }}
           />
         </Link>
       </Cell>
       <Cell grow sx={{
         pl: getResponsiveSxAmount(2),
+        alignSelf: 'center',
+        justifyContent: 'center',
       }}>
         <SerifTypography
-          variant="h4"
+          variant="h3"
           sx={{
             mt: 0,
             mb: 1,

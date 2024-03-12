@@ -8,20 +8,20 @@ import useTypography from '../../hooks/useTypography'
 const HeadlineStrapline: FC<{
   headline?: ReactElement | string,
   strapline?: ReactElement | string,
+  headlineVariant?: string,
+  straplineVariant?: string,
   mt?: number,
   mm?: number,
   mb?: number,
 }> = ({
   headline,
   strapline,
+  headlineVariant = 'h2',
+  straplineVariant = 'h3',
   mt = 6,
   mm = 2,
   mb = 6,
 }) => {
-  const {
-    headlineVariant,
-    straplineVariant,
-  } = useTypography()
 
   const sx = useMemo(() => {
     // what we put on an element if it's the only one
@@ -58,14 +58,14 @@ const HeadlineStrapline: FC<{
     <>
       {
         headline && (
-          <SerifTypography variant={ headlineVariant } gutterBottom sx={ headlineSx }>
+          <SerifTypography variant={headlineVariant as any} gutterBottom sx={ headlineSx }>
             { headline }
           </SerifTypography>
         )
       }
       {
         strapline && (
-          <SerifTypography variant={ straplineVariant } gutterBottom sx={ straplineSx }>
+          <SerifTypography variant={straplineVariant as any} gutterBottom sx={ straplineSx }>
             { strapline }
           </SerifTypography>
         )
