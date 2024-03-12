@@ -16,9 +16,11 @@ import {
 
 const ArticleHeader: FC<{
   article: IArticle,
+  imageSize?: number,
   sx?: SxProps,
 }> = ({
   article,
+  imageSize = 120,
   sx = {},
 }) => {
   const isLargeScreen = useIsLargeScreen()
@@ -37,8 +39,8 @@ const ArticleHeader: FC<{
                 src={ article.image }
                 sx={{
                   border: '1px solid #333',
-                  width: getResponsiveSxAmount(60),
-                  height: getResponsiveSxAmount(60),
+                  width: getResponsiveSxAmount(imageSize),
+                  height: getResponsiveSxAmount(imageSize),
                   boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)',
                 }}
               /> 
