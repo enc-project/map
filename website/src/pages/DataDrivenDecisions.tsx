@@ -27,6 +27,27 @@ const DataDrivenDecisions: FC = () => {
       <Paragraph>
         Then we can start to see the effectiveness of that policy and no single person feels like they have to "convince" people that their idea was the good idea.
       </Paragraph>
+      <Box
+        sx={{
+          display: 'flex',
+          width: '800px',
+          flexDirection: 'column',
+          justifyContent: 'center',
+          mx: 'auto',
+          mt: 5,
+          mb: 7,
+          }}
+        >
+        <Box
+          component='img'
+          src="/img/article-headers/data-driven-decisions-2.webp"
+          alt="Data Driven Decisions"
+          sx={{
+            borderRadius: 2,
+          }}
+        />
+        <caption>Mission Control Apollo 11 - via Midjourney</caption>
+      </Box>
       <Quote
         author="source"
         url="https://en.wikipedia.org/wiki/Scientific_method"

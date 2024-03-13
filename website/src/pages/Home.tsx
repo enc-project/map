@@ -8,6 +8,7 @@ import ArticleRow from '../components/articles/ArticleRow'
 import ExternalLink from '../components/articles/ExternalLink'
 
 import { getResponsiveSxAmount } from '../styles'
+import theme from '../theme'
 import { ARTICLES } from '../data'
 
 const Home: FC = () => {
@@ -21,7 +22,7 @@ const Home: FC = () => {
       />
       <HeadlineStrapline
         headline={<>
-          Our <ExternalLink href="https://en.wikipedia.org/wiki/1708_British_general_election">political system</ExternalLink> was invented <ExternalLink href="https://en.wikipedia.org/wiki/Electricity"><strong>before electricity.</strong></ExternalLink>
+          Our <ExternalLink color={theme.palette.primary.main} href="https://en.wikipedia.org/wiki/1708_British_general_election">political system</ExternalLink> was invented <ExternalLink color={theme.palette.primary.main} href="https://en.wikipedia.org/wiki/Electricity"><strong>before electricity.</strong></ExternalLink>
         </> }
         strapline="Now we have the Internet, blockchains and generative AI."
         headlineVariant="h2"
