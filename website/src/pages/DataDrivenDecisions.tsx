@@ -6,6 +6,7 @@ import HeadlineStrapline from '../components/articles/HeadlineStrapline'
 import Paragraph from '../components/articles/Paragraph'
 import Quote from '../components/articles/Quote'
 import ExternalLink from '../components/articles/ExternalLink'
+import SerifTypography from '../components/widgets/SerifTypography'
 
 import { getArticle } from '../data'
 
@@ -64,8 +65,40 @@ const DataDrivenDecisions: FC = () => {
         While integrating science into policymaking presents challenges, including costs and resistance from those content with the status quo, the potential benefits for government transparency, accountability, and effectiveness are immense. It's a call to action for citizens to demand evidence-based policymaking from their leaders.
       </Paragraph>
       <Paragraph>
-        The steps of the scientific method include observation, questioning, hypothesizing, experimenting, and analyzing results. This methodical approach can be applied to policy-making to ensure decisions are based on evidence and can withstand scrutiny.
+        This methodical approach can be applied to policy-making to ensure decisions are based on evidence and can withstand scrutiny.
       </Paragraph>
+      <Box sx={{ mt: 4, mb: 4 }}>
+        <SerifTypography variant="h6" sx={{ mb: 2 }}>
+          The Steps of the Scientific Method
+        </SerifTypography>
+        <ul>
+          <li>
+            <Paragraph>
+              <strong>Observation:</strong> First, we take a good look at what's happening. It's like noticing that traffic jams keep happening at the same spot on your way to work.
+            </Paragraph>
+          </li>
+          <li>
+            <Paragraph>
+              <strong>Questioning:</strong> Then, we ask why. Why is this traffic jam happening? Is there a better way to manage policies that affect our lives?
+            </Paragraph>
+          </li>
+          <li>
+            <Paragraph>
+              <strong>Hypothesizing:</strong> Next, we come up with ideas or solutions. Maybe if we change the timing of the traffic lights, it could ease the jam.
+            </Paragraph>
+          </li>
+          <li>
+            <Paragraph>
+              <strong>Experimenting:</strong> This is where we test our ideas. Let's try that new traffic light timing and see what happens.
+            </Paragraph>
+          </li>
+          <li>
+            <Paragraph>
+              <strong>Analyzing Results:</strong> Finally, we look at the data. Did the change help reduce traffic jams? If yes, great! If not, back to the drawing board.
+            </Paragraph>
+          </li>
+        </ul>
+      </Box>
       <Paragraph>
         Observation involves taking a close look at the current situation, questioning why things are the way they are, hypothesizing potential solutions, experimenting with these solutions, and finally, analyzing the results to see if the problem has been effectively addressed.
       </Paragraph>
