@@ -16,16 +16,19 @@ const DataDrivenDecisions: FC = () => {
     <Box>
       <ArticleHeader article={article} />
       <HeadlineStrapline
-        strapline="Introducing the scientific method in decision making."
+        strapline="Using Science to Make Better Rules for Everyone."
       />
       <Paragraph>
-        This article will introduce the scientific method, and how it can be used to make decisions.
+        Right now, rules are often based on beliefs, popularity, or current events, without a thorough examination of their long-term impact. The scientific method offers a more objective approach to rule-making, focusing on evidence and facts rather than opinions or political convenience.
       </Paragraph>
       <Paragraph>
-        It will highlight that when policy is proposed, the main focus will be "how will this be tested".
+        By adopting the scientific method, rule-makers would need to clearly define their goals, decide on measurable outcomes, and commit to evaluating the effectiveness of their policies. This process ensures that policies are tested and adjusted based on data, rather than being left unexamined.
       </Paragraph>
       <Paragraph>
-        Then we can start to see the effectiveness of that policy and no single person feels like they have to "convince" people that their idea was the good idea.
+        The lack of follow-up on the impact of policies is a significant issue. Utilizing the scientific method requires policymakers to provide evidence of a policy's success or failure, promoting accountability and the possibility of policy revision or removal if it doesn't work as intended.
+      </Paragraph>
+      <Paragraph>
+        Implementing science in policy-making has numerous benefits, including fairness, reliance on factual evidence, and consideration of long-term consequences. It encourages policymakers to think critically about the implications of their decisions.
       </Paragraph>
       <Box
         sx={{
@@ -36,8 +39,8 @@ const DataDrivenDecisions: FC = () => {
           mx: 'auto',
           mt: 5,
           mb: 7,
-          }}
-        >
+        }}
+      >
         <Box
           component='img'
           src="/img/article-headers/data-driven-decisions-2.webp"
@@ -49,17 +52,35 @@ const DataDrivenDecisions: FC = () => {
         <caption>Mission Control Apollo 11 - via Midjourney</caption>
       </Box>
       <Quote
-        author="source"
+        author="Thomas Henry Huxley"
         url="https://en.wikipedia.org/wiki/Scientific_method"
       >
-        The scientific method is a process for experimentation that is used to explore observations and answer questions.
+        The scientific method, is nothing but the normal working of the human mind.
       </Quote>
       <Paragraph>
-        By applying this method to policy making, we can shift the focus from convincing to testing and evaluating based on data.
+        Historical successes, such as NASA's Apollo missions, demonstrate the power of the scientific method in tackling complex problems through systematic testing and learning. Applying this method to policymaking can lead to more effective and equitable rules.
       </Paragraph>
-      <ExternalLink href="https://en.wikipedia.org/wiki/Scientific_method">
-        Learn more about the scientific method
-      </ExternalLink>
+      <Paragraph>
+        While integrating science into policymaking presents challenges, including costs and resistance from those content with the status quo, the potential benefits for government transparency, accountability, and effectiveness are immense. It's a call to action for citizens to demand evidence-based policymaking from their leaders.
+      </Paragraph>
+      <Paragraph>
+        The steps of the scientific method include observation, questioning, hypothesizing, experimenting, and analyzing results. This methodical approach can be applied to policy-making to ensure decisions are based on evidence and can withstand scrutiny.
+      </Paragraph>
+      <Paragraph>
+        Observation involves taking a close look at the current situation, questioning why things are the way they are, hypothesizing potential solutions, experimenting with these solutions, and finally, analyzing the results to see if the problem has been effectively addressed.
+      </Paragraph>
+      <Paragraph>
+        By focusing on facts more than opinions and ensuring politicians are accountable for their decisions, we can create policies that are more effective and fair. It may be challenging, but the potential to improve government transparency, accountability, and effectiveness makes it a worthwhile endeavor.
+      </Paragraph>
+      <Quote
+        author="Ken Norris"
+        url="https://en.wikipedia.org/wiki/Scientific_method"
+      >
+        The scientific method is nothing more than a system of rules to keep us from lying to each other.
+      </Quote>
+      <Paragraph>
+        We should all encourage our leaders to adopt the scientific method in policy-making, holding them accountable for their decisions. This is the path to a government that truly serves the interests of all its citizens.
+      </Paragraph>
     </Box>
   )
 }
