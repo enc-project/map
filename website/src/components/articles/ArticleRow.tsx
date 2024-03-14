@@ -68,6 +68,7 @@ const ArticleRow: FC<{
                 border: '1px solid #333',
                 width: getResponsiveSxAmount(imageSize),
                 height: getResponsiveSxAmount(imageSize),
+                filter: 'grayscale(100%)',
               }}
             />
           </Link>

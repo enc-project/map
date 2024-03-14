@@ -41,7 +41,7 @@ const ArticleHeader: FC<{
                   border: '1px solid #333',
                   width: getResponsiveSxAmount(imageSize),
                   height: getResponsiveSxAmount(imageSize),
-                  boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)',
+                  filter: 'grayscale(100%)',
                 }}
               /> 
             </Cell>
