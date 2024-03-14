@@ -7,7 +7,7 @@ export const ARTICLES: IArticle[] = [
     routeName: 'data-driven-decisions',
     title: 'Data Driven Decisions',
     description: 'Politicians make populist decisions to get re-elected, they sell these decisions using emotional rhetoric.  Perhaps we could use the scientific method to make decisions using data and tests?',
-    image: '/img/article-headers/data-driven-decisions.png',
+    image: '/img/article-headers/data-driven-decisions.webp',
   },
   {
     routeName: 'perspective-generator',
