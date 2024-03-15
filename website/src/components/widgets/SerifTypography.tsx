@@ -3,7 +3,8 @@ import Typography, { TypographyProps } from '@mui/material/Typography'
 
 const SerifTypography: FC<TypographyProps> = ({
   children,
-  variant,
+  variant = 'body1',
+  align,
   sx = {},
   ...props
 }) => {
@@ -11,8 +12,9 @@ const SerifTypography: FC<TypographyProps> = ({
     <Typography
       variant={variant}
       sx={{
-        fontFamily: '"Playfair Display", serif;',
+        fontFamily: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(variant) ? '"Playfair Display", serif' : '"Source Sans Pro", sans-serif',
         fontOpticalSizing: 'auto',
+        textAlign: align as 'left' | 'center' | 'right',
         ...sx,
       }}
       {...props}

@@ -20,52 +20,49 @@ const ArticleHeader: FC<{
   sx?: SxProps,
 }> = ({
   article,
-  imageSize = 120,
+  imageSize = 150,
   sx = {},
 }) => {
   const isLargeScreen = useIsLargeScreen()
   return (
-    <Row sx={ sx }>
+    <Row sx={{ ...sx, flexDirection: 'column', alignItems: 'center', justifyContent: 'center', mt: getResponsiveSxAmount(4) }}>
       {
         isLargeScreen && (
-          <>
-            <Cell
+          <Cell
+            sx={{
+              mb: getResponsiveSxAmount(1),
+            }}
+          >
+            <Avatar
+              alt={ article.title }
+              src={ article.image }
               sx={{
-                mr: getResponsiveSxAmount(3),
+                border: '1px solid #333',
+                width: getResponsiveSxAmount(imageSize),
+                height: getResponsiveSxAmount(imageSize),
+                filter: 'grayscale(100%)',
               }}
-            >
-              <Avatar
-                alt={ article.title }
-                src={ article.image }
-                sx={{
-                  border: '1px solid #333',
-                  width: getResponsiveSxAmount(imageSize),
-                  height: getResponsiveSxAmount(imageSize),
-                  filter: 'grayscale(100%)',
-                }}
-              /> 
-            </Cell>
-            <Cell
-              sx={{
-                '& a': {
-                  textDecoration: 'none',
-                }
-              }}
-            >
-              <HeadlineStrapline
-                headline={(
-                  <>
-                    <Link routeName="home">ENC</Link>&nbsp;:&nbsp;
-                  </>
-                )}
-              />
-            </Cell>
-          </>
+            />
+          </Cell>
         )
       }
-      <Cell grow>
+      <Cell
+        sx={{
+          mt: getResponsiveSxAmount(0),
+          '& a': {
+            textDecoration: 'none',
+          },
+          textAlign: 'center',
+        }}
+      >
         <HeadlineStrapline
-          headline={ article.title }
+          headline={isLargeScreen ? (
+            <>
+              <Link routeName="home">ENC</Link>&nbsp;:&nbsp;{article.title}
+            </>
+          ) : (
+            article.title
+          )}
         />
       </Cell>
     </Row>

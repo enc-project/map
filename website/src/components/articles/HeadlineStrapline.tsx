@@ -10,6 +10,7 @@ const HeadlineStrapline: FC<{
   strapline?: ReactElement | string,
   headlineVariant?: string,
   straplineVariant?: string,
+  align?: 'left' | 'center' | 'right',
   mt?: number,
   mm?: number,
   mb?: number,
@@ -18,9 +19,10 @@ const HeadlineStrapline: FC<{
   strapline,
   headlineVariant = 'h2',
   straplineVariant = 'h3',
-  mt = 6,
+  align = 'left',
+  mt = 4,
   mm = 2,
-  mb = 6,
+  mb = 4,
 }) => {
 
   const sx = useMemo(() => {
@@ -58,14 +60,14 @@ const HeadlineStrapline: FC<{
     <>
       {
         headline && (
-          <SerifTypography variant={headlineVariant as any} gutterBottom sx={ headlineSx }>
+          <SerifTypography variant={headlineVariant as any} gutterBottom sx={ headlineSx } align={ align }>
             { headline }
           </SerifTypography>
         )
       }
       {
         strapline && (
-          <SerifTypography variant={straplineVariant as any} gutterBottom sx={ straplineSx }>
+          <SerifTypography variant={straplineVariant as any} gutterBottom sx={ straplineSx } align={ align }>
             { strapline }
           </SerifTypography>
         )
