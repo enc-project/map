@@ -212,6 +212,18 @@ Point at the banks bailout (show bitcoin image)
 
 Make oranges example
 
+### people are good
+
+https://www.reddit.com/r/Unexpected/comments/1bbxj3a/first_i_was_upset_then_it_made_my_eyes_tear_up/
+
+### fuck up
+
+https://www.theguardian.com/commentisfree/2024/mar/17/dont-believe-the-right-britain-doesnt-have-9m-shirkers-they-just-want-better-work#comment-166917364
+
+### equal rights
+
+https://www.theguardian.com/society/2024/mar/18/garrick-club-men-only-members-list-roll-call-british-establishment
+
 ## other things
 
 This is a list of other things we should cover - there are many more but for now here we are:
