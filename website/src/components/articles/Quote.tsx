@@ -33,8 +33,8 @@ const Quote: FC<{
           p: getResponsiveSxAmount(padding),
           ml: 0,
           mr: 0,
-          mt: 2,
-          mb: 0.5,
+          mt: 5,
+          mb: 2,
           fontStyle: 'italic',
           backgroundColor: '#f4f4ff'
         }}
@@ -53,6 +53,7 @@ const Quote: FC<{
       <Box
         sx={{
           textAlign: 'right',
+          mb: 5,
         }}
       >
         <ExternalLink href={ url } underlined>

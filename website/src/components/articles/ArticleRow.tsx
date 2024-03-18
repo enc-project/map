@@ -6,6 +6,8 @@ import Box from '@mui/material/Box'
 import SerifTypography from '../widgets/SerifTypography'
 import Row from '../widgets/Row'
 import Cell from '../widgets/Cell'
+import Container from '@mui/material/Container'
+import theme from '../../theme'
 
 import { getResponsiveSxAmount } from '../../styles'
 import { IArticle } from '../../types'
@@ -18,7 +20,7 @@ const ArticleRow: FC<{
   mb?: number,
 }> = ({
   article,
-  imageSize = 150,
+  imageSize = 260,
   mt = 6,
   mb = 6,
   sx = {},
@@ -32,62 +34,104 @@ const ArticleRow: FC<{
   }
 
   return (
-    <Row sx={ rowSx }>
-      <Cell
-        sx={{
-          pt: getResponsiveSxAmount(1),
-        }}
-      >
-        <Link routeName={ article.routeName }>
-          <Avatar
-            alt={ article.title }
-            src={ article.image }
-            sx={{
-              border: '1px solid #333',
-              width: getResponsiveSxAmount(imageSize),
-              height: getResponsiveSxAmount(imageSize),
-              boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.5)',
+    <Container
+      maxWidth="lg"
+    >
+      <Row sx={ rowSx }>
+        <Cell
+          sx={{
+            pt: getResponsiveSxAmount(1),
+          }}
+        >
+          <Link
+            sx={{ 
+              color: theme.palette.primary.main,
+              '&:hover': {
+                color: theme.palette.primary.light,
+              },
+              '&:focus': {
+                color: theme.palette.primary.main,
+              },
+              '&:active': {
+                color: theme.palette.primary.light,
+              },
+              '&:visited': {
+                color: theme.palette.primary.main,
+              },
             }}
-          />
-        </Link>
-      </Cell>
-      <Cell grow sx={{
-        pl: getResponsiveSxAmount(2),
-      }}>
-        <SerifTypography
-          variant="h4"
-          sx={{
-            mt: 0,
-            mb: 1,
-            '& a': {
-              textDecoration: 'none',
-            },
-          }}
-        >
-          <Link routeName={ article.routeName }>
-            { article.title }
+            routeName={ article.routeName }
+          >
+            <Avatar
+              alt={ article.title }
+              src={ article.image }
+              sx={{
+                border: '1px solid #333',
+                width: getResponsiveSxAmount(imageSize),
+                height: getResponsiveSxAmount(imageSize),
+                filter: 'grayscale(100%)',
+              }}
+            />
           </Link>
-        </SerifTypography>
-        <SerifTypography
-          variant="body1"
-          sx={{
-            mt: 0,
-            mb: 1,
-          }}
-        >
-          { article.description }
-        </SerifTypography>
-        <SerifTypography
-          variant="caption"
-          sx={{
-            mt: 0,
-            mb: 3,
-          }}
-        >
-          <Link routeName={ article.routeName }>view article</Link>
-        </SerifTypography>
-      </Cell>
-    </Row>
+        </Cell>
+        <Cell grow sx={{
+          pl: getResponsiveSxAmount(2),
+          alignSelf: 'center',
+          justifyContent: 'center',
+        }}>
+          <SerifTypography
+            variant="h3"
+            sx={{
+              mt: 0,
+              mb: 1,
+              '& a': {
+                textDecoration: 'none',
+              },
+            }}
+          >
+            <Link routeName={ article.routeName }>
+              { article.title }
+            </Link>
+          </SerifTypography>
+          <SerifTypography
+            variant="body1"
+            sx={{
+              mt: 0,
+              mb: 1,
+            }}
+          >
+            { article.description }
+          </SerifTypography>
+          <SerifTypography
+            variant="caption"
+            sx={{
+              mt: 0,
+              mb: 3,
+            }}
+          >
+            <Link
+              sx={{ 
+                color: theme.palette.primary.main,
+                '&:hover': {
+                  color: theme.palette.primary.light,
+                },
+                '&:focus': {
+                  color: theme.palette.primary.main,
+                },
+                '&:active': {
+                  color: theme.palette.primary.light,
+                },
+                '&:visited': {
+                  color: theme.palette.primary.main,
+                },
+              }}
+              routeName={ article.routeName }
+            >
+              view article
+            </Link>
+          </SerifTypography>
+        </Cell>
+      </Row>
+    </Container>
   )
 }
 

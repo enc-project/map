@@ -122,7 +122,7 @@ const Layout: FC = ({ children }) => {
                 handleDrawerClose()
               }}>
                 <ListItemAvatar>
-                  <Avatar alt={ article.title } src={ article.image } sx={{ border: '1px solid #333' }}/>
+                  <Avatar alt={ article.title } src={ article.image } sx={{ border: '1px solid #333', filter: 'grayscale(100%)' }}/>
                 </ListItemAvatar>
                 <ListItemText
                   primary={ article.title }
