@@ -12,6 +12,8 @@ import theme from '../../theme'
 import { getResponsiveSxAmount } from '../../styles'
 import { IArticle } from '../../types'
 
+import InternalLink from '../articles/InternalLink'
+
 const ArticleRow: FC<{
   article: IArticle,
   imageSize?: number,
@@ -20,7 +22,7 @@ const ArticleRow: FC<{
   mb?: number,
 }> = ({
   article,
-  imageSize = 260,
+  imageSize = 160,
   mt = 6,
   mb = 6,
   sx = {},
@@ -44,21 +46,6 @@ const ArticleRow: FC<{
           }}
         >
           <Link
-            sx={{ 
-              color: theme.palette.primary.main,
-              '&:hover': {
-                color: theme.palette.primary.light,
-              },
-              '&:focus': {
-                color: theme.palette.primary.main,
-              },
-              '&:active': {
-                color: theme.palette.primary.light,
-              },
-              '&:visited': {
-                color: theme.palette.primary.main,
-              },
-            }}
             routeName={ article.routeName }
           >
             <Avatar
@@ -88,15 +75,15 @@ const ArticleRow: FC<{
               },
             }}
           >
-            <Link routeName={ article.routeName }>
+            <InternalLink routeName={ article.routeName }>
               { article.title }
-            </Link>
+            </InternalLink>
           </SerifTypography>
           <SerifTypography
             variant="body1"
             sx={{
-              mt: 0,
-              mb: 1,
+              mt: 1,
+              mb: 2,
             }}
           >
             { article.description }
@@ -108,26 +95,11 @@ const ArticleRow: FC<{
               mb: 3,
             }}
           >
-            <Link
-              sx={{ 
-                color: theme.palette.primary.main,
-                '&:hover': {
-                  color: theme.palette.primary.light,
-                },
-                '&:focus': {
-                  color: theme.palette.primary.main,
-                },
-                '&:active': {
-                  color: theme.palette.primary.light,
-                },
-                '&:visited': {
-                  color: theme.palette.primary.main,
-                },
-              }}
+            <InternalLink
               routeName={ article.routeName }
             >
               view article
-            </Link>
+            </InternalLink>
           </SerifTypography>
         </Cell>
       </Row>

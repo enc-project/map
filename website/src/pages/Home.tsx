@@ -16,68 +16,42 @@ const Home: FC = () => {
     <Box>
       <HeadlineStrapline
         headline="Trust in politics is eroding."
-        strapline="Politicans seem to say one thing but then do another."
-        headlineVariant="h2"
-        straplineVariant="h5"
+        strapline="Politicans say one thing and then do another."
+        headlineVariant="h1"
+        straplineVariant="h6"
       />
       <HeadlineStrapline
         headline={<>
           Our <ExternalLink color={theme.palette.primary.main} href="https://en.wikipedia.org/wiki/1708_British_general_election">political system</ExternalLink> was invented <ExternalLink color={theme.palette.primary.main} href="https://en.wikipedia.org/wiki/Electricity"><strong>before electricity.</strong></ExternalLink>
         </> }
         strapline="Now we have the Internet, blockchains and generative AI."
-        headlineVariant="h2"
-        straplineVariant="h5"
+        headlineVariant="h3"
+        straplineVariant="h6"
       />
       <HeadlineStrapline
-        strapline="We can change this, if enough of us want to."
+        strapline={<>
+          We <ExternalLink color={theme.palette.primary.main} href="https://en.wikipedia.org/wiki/I_know_that_I_know_nothing">don't presume</ExternalLink> to know the answers; at the same time:
+        </> }
         straplineVariant="h5"
+        mt={ 3 }
+        mb={ 3 }
       />
       <Quote
         author="[source]"
-        url="https://en.wikipedia.org/wiki/I_know_that_I_know_nothing"
+        url="https://meta.wikimedia.org/wiki/Cunningham%27s_Law"
         sx={{
+          mt: getResponsiveSxAmount(2),
           ml: getResponsiveSxAmount(4),
+          mb: getResponsiveSxAmount(2),
         }}
       >
-        I know that I know nothing...
+        The best way to get the right answer on the internet is not to ask a question; it's to post the wrong answer.
       </Quote>
       <HeadlineStrapline
-        strapline="We don't presume to tell you how to reform the political system."
-        straplineVariant="h5"
-        mt={ 3 }
-        mb={ 3 }
-      />
-      <HeadlineStrapline
-        strapline="At the same time:"
-        straplineVariant="h5"
-        mt={ 3 }
-      />
-      <Quote
-        author="[source]"
-        url="https://meta.wikimedia.org/wiki/Cunningham%27s_Law)"
-        sx={{
-          ml: getResponsiveSxAmount(4),
-          mb: getResponsiveSxAmount(3),
-        }}
-      >
-        To get the right answer on the Internet, first put the wrong answer...
-      </Quote>
-      <HeadlineStrapline
-        strapline="So, here are some wrong answers to get the conversation started."
-        straplineVariant="h5"
-        mt={ 3 }
-        mb={ 3 }
-      />
-      <HeadlineStrapline
-        strapline="If you have opinions, we implore you to tell your friends, your family, your colleagues."
-        straplineVariant="h5"
-        mt={ 3 }
-        mb={ 3 }
-      />
-      <HeadlineStrapline
-        strapline="We are running out of time."
-        straplineVariant="h5"
-        mt={ 3 }
+        strapline="Here are some wrong answers to get the conversation started:"
+        straplineVariant="h6"
+        mt={ 1 }
+        mb={ 6 }
       />
       <Divider />
       {

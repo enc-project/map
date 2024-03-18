@@ -23,7 +23,7 @@ export const ARTICLES: IArticle[] = [
   },
   {
     routeName: 'red-green-or-blue',
-    title: 'red, green OR blue?',
+    title: 'Red, green OR blue?',
     description: 'We have to vote for a single party that collapses our entire political viewpoint into a single colour.  Perhaps we could use technology to vote for panels for experts across lots of topics instead?',
     image: '/img/article-headers/red-green-blue.webp',
   },

@@ -17,7 +17,9 @@ const DataDrivenDecisions: FC = () => {
     <Box>
       <ArticleHeader article={article} />
       <HeadlineStrapline
+        mt={ 1 }
         strapline="Using Science to Make Better Rules for Everyone."
+        straplineVariant="h4"
         align="center"
       />
       <Paragraph>

@@ -6,6 +6,8 @@ import Row from '../widgets/Row'
 import Cell from '../widgets/Cell'
 import HeadlineStrapline from './HeadlineStrapline'
 
+import theme from '../../theme'
+
 import { getResponsiveSxAmount } from '../../styles'
 
 import useIsLargeScreen from '../../hooks/useIsLargeScreen'
@@ -20,7 +22,7 @@ const ArticleHeader: FC<{
   sx?: SxProps,
 }> = ({
   article,
-  imageSize = 150,
+  imageSize = 350,
   sx = {},
 }) => {
   const isLargeScreen = useIsLargeScreen()
@@ -53,12 +55,13 @@ const ArticleHeader: FC<{
             textDecoration: 'none',
           },
           textAlign: 'center',
+          color: theme.palette.primary.main,
         }}
       >
         <HeadlineStrapline
           headline={isLargeScreen ? (
             <>
-              <Link routeName="home">ENC</Link>&nbsp;:&nbsp;{article.title}
+              {article.title}
             </>
           ) : (
             article.title
