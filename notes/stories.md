@@ -224,6 +224,22 @@ https://www.theguardian.com/commentisfree/2024/mar/17/dont-believe-the-right-bri
 
 https://www.theguardian.com/society/2024/mar/18/garrick-club-men-only-members-list-roll-call-british-establishment
 
+## the housing crisis is a greed crisis
+
+https://www.theguardian.com/lifeandstyle/2024/mar/19/end-of-landlords-surprisingly-simple-solution-to-uk-housing-crisis
+
+## are you taking the fucking piss?
+
+https://www.theguardian.com/politics/2024/mar/22/james-cleverly-spent-165000-on-flight-to-rwanda-to-sign-deportation-deal
+
+## What do the welsh think?
+
+https://en.wikipedia.org/wiki/William,_Prince_of_Wales
+
+## out of touch? numb more like
+
+https://www.theguardian.com/politics/2024/mar/24/jeremy-hunt-doubles-down-on-100k-a-year-doesnt-go-far-claim
+
 ## other things
 
 This is a list of other things we should cover - there are many more but for now here we are:
