@@ -240,6 +240,10 @@ https://en.wikipedia.org/wiki/William,_Prince_of_Wales
 
 https://www.theguardian.com/politics/2024/mar/24/jeremy-hunt-doubles-down-on-100k-a-year-doesnt-go-far-claim
 
+## politicians are more important than what they are trying to solve
+
+https://www.instagram.com/reel/C6ZX7kTNzGC/?igsh=MmZmMnFjYjl0eGtn
+
 ## other things
 
 This is a list of other things we should cover - there are many more but for now here we are:
