@@ -240,6 +240,14 @@ https://en.wikipedia.org/wiki/William,_Prince_of_Wales
 
 https://www.theguardian.com/politics/2024/mar/24/jeremy-hunt-doubles-down-on-100k-a-year-doesnt-go-far-claim
 
+## one set of rules for one
+
+https://www.theguardian.com/uk-news/article/2024/may/02/minister-sorry-as-veterans-find-id-card-not-valid-for-english-elections
+
+## unelections
+
+https://www.instagram.com/p/C50r5KCNUJE/
+
 ## other things
 
 This is a list of other things we should cover - there are many more but for now here we are:
