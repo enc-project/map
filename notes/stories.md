@@ -248,6 +248,14 @@ https://www.theguardian.com/uk-news/article/2024/may/02/minister-sorry-as-vetera
 
 https://www.instagram.com/p/C50r5KCNUJE/
 
+## politicians are more important than what they are trying to solve
+
+https://www.instagram.com/reel/C6ZX7kTNzGC/?igsh=MmZmMnFjYjl0eGtn
+
+## gerrymandering
+
+https://www.instagram.com/reel/CsTImYBoKts/
+
 ## other things
 
 This is a list of other things we should cover - there are many more but for now here we are:
