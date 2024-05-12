@@ -76,15 +76,15 @@ const MultipleChoice: FC<{
                 style={props}
                 sx={{
                   border: '1px solid #000',
-                  backgroundColor: isSelected ? 'secondary.main' : 'transparent',
+                  backgroundColor: isSelected ? 'primary.main' : 'transparent',
                   color: isSelected ? '#fff' : '#000',
                   borderRadius: '10px',
                   padding: '10px',
                   boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
                   cursor: 'pointer',
                   '&:hover': {
-                    color: 'secondary.main',
-                    borderColor: 'secondary.main',
+                    color: 'primary.main',
+                    borderColor: 'primary.main',
                     backgroundColor: 'transparent',
                   },
                   ...boxSx,

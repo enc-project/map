@@ -14,7 +14,7 @@ const ItsSlowToChange: FC = () => {
     <Box>
       <ArticleHeader article={article} />
       <Paragraph>
-        Propaganda is a powerful tool. The world has seen (many times) that you can sway an entire population through narrative and storytelling.
+        content will go here...
       </Paragraph>
     </Box>
   )
