@@ -16,7 +16,6 @@ const SerifTypography: FC<TypographyProps> = ({
         fontFamily: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'].includes(variant) ? '"Playfair Display", serif' : '"Open Sans", sans-serif',
         fontOpticalSizing: 'auto',
         textAlign: align as 'left' | 'center' | 'right',
-        lineHeight: getResponsiveSxAmount(1.3),
         ...sx,
       }}
       {...props}

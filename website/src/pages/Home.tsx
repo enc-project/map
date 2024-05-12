@@ -25,7 +25,7 @@ const Home: FC = () => {
         homeSequence.step >= 0 && (
           <TypewriterText
             variant="h1"
-            text="Do you think politics is working?"
+            text="Do you think UK politics is working?"
             onComplete={ () => homeSequence.progress() }
           />
         )
@@ -39,10 +39,10 @@ const Home: FC = () => {
               'No',
             ]}
             rowSx={{
-              mt: 4,
+              mt: getResponsiveSxAmount(4),
             }}
             cellSx={{
-              mr: 4,
+              mr: getResponsiveSxAmount(4),
             }}
             onChoose={(option) => {
               console.log(option)
@@ -57,7 +57,7 @@ const Home: FC = () => {
           <TypewriterText
             variant="h1"
             text="Do you care?"
-            sx={{mt: 6}}
+            sx={{mt: getResponsiveSxAmount(6)}}
             onComplete={ () => homeSequence.progress() }
           />
         )
@@ -71,10 +71,10 @@ const Home: FC = () => {
               'No',
             ]}
             rowSx={{
-              mt: 4,
+              mt: getResponsiveSxAmount(4),
             }}
             cellSx={{
-              mr: 4,
+              mr: getResponsiveSxAmount(4),
             }}
             onChoose={(option) => {
               console.log(option)

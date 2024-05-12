@@ -11,12 +11,14 @@ const TypewriterText: FC<TypographyProps & {
   minSpeed?: number,
   // max number milliseconds we add to minSpeed (between 0 and 100% will be added)
   randomSpeed?: number,
+  lineHeight?: number,
   onComplete?: () => void,
 }> = ({
   text,
   initialDelay = 0,
   minSpeed = 15,
   randomSpeed = 45,
+  lineHeight = 1.5,
   onComplete = () => {},
   ...props
 }) => {
@@ -49,7 +51,7 @@ const TypewriterText: FC<TypographyProps & {
   ])
 
   return (
-    <SerifTypography {...props}>
+    <SerifTypography lineHeight={ lineHeight } {...props}>
       { currentText }
     </SerifTypography>
   )

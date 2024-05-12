@@ -7,6 +7,10 @@ import Row from '../widgets/Row'
 import Cell from '../widgets/Cell'
 import SerifTypography from '../widgets/SerifTypography'
 
+import {
+  getResponsiveFontSize,
+} from '../../styles'
+
 const AnimatedBox = animated(Box)
 
 const MultipleChoice: FC<{
@@ -63,7 +67,7 @@ const MultipleChoice: FC<{
             >
               <SerifTypography
                 sx={{
-                  fontSize: '20pt'
+                  fontSize: getResponsiveFontSize(40),
                 }}
               >
                 { option }
