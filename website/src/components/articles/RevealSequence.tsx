@@ -9,7 +9,7 @@ import SerifTypography from '../widgets/SerifTypography'
 
 const AnimatedBox = animated(Box)
 
-const MultipleChoice: FC<{
+const RevealSequence: FC<{
   options: string[],
   rowSx?: SxProps,
   cellSx?: SxProps,
@@ -59,12 +59,9 @@ const MultipleChoice: FC<{
                 },
                 ...boxSx,
               }}
-              onClick={ () => onChoose(option) }
             >
               <SerifTypography
-                sx={{
-                  fontSize: '20pt'
-                }}
+                variant="h4"
               >
                 { option }
               </SerifTypography>
@@ -76,4 +73,4 @@ const MultipleChoice: FC<{
   )
 }
 
-export default MultipleChoice
+export default RevealSequence

@@ -11,11 +11,13 @@ const TypewriterText: FC<TypographyProps & {
   minSpeed?: number,
   // max number milliseconds we add to minSpeed (between 0 and 100% will be added)
   randomSpeed?: number,
+  onComplete?: () => void,
 }> = ({
   text,
   initialDelay = 0,
   minSpeed = 15,
   randomSpeed = 45,
+  onComplete = () => {},
   ...props
 }) => {
   const [ currentText, setCurrentText ] = useState('')
@@ -28,7 +30,13 @@ const TypewriterText: FC<TypographyProps & {
       await bluebird.delay(initialDelay)
       while(active) {
         currentIndex++
-        setCurrentText(text.slice(0, currentIndex))
+        const newText = text.slice(0, currentIndex)
+        setCurrentText(newText)
+        if(newText.length >= text.length) {
+          onComplete()
+          active = false
+          break
+        }
         await bluebird.delay(minSpeed + (Math.random() * randomSpeed))
       }
     }
