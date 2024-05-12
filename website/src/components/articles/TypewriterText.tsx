@@ -1,11 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
 import bluebird from 'bluebird'
-import { SxProps } from '@mui/system'
 import { TypographyProps } from '@mui/material/Typography'
 import SerifTypography from '../widgets/SerifTypography'
-
-import { getResponsiveSxAmount } from '../../styles'
-import useTypography from '../../hooks/useTypography'
 
 const TypewriterText: FC<TypographyProps & {
   text: string,

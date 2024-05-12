@@ -2,6 +2,7 @@ import React, { FC, Fragment } from 'react'
 
 import Box from '@mui/material/Box'
 import TypewriterText from '../components/articles/TypewriterText'
+import MultipleChoice from '../components/articles/MultipleChoice'
 
 import {
   getResponsiveSxAmount,
@@ -17,6 +18,15 @@ const Home: FC = () => {
       <TypewriterText
         variant="h1"
         text="Do you think politics is working?"
+      />
+      <MultipleChoice
+        options={[
+          'Yes',
+          'No',
+        ]}
+        onChoose={(option) => {
+          console.log(option)
+        }}
       />
     </Box>
   )

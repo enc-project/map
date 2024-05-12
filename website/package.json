@@ -17,6 +17,7 @@
     "@mui/icons-material": "^5.3.1",
     "@mui/material": "^5.3.1",
     "@mui/styles": "^5.12.0",
+    "@react-spring/web": "^9.7.3",
     "@types/bluebird": "^3.5.36",
     "@types/hookrouter": "^2.2.5",
     "@types/node": "^20.10.4",
@@ -41,5 +42,6 @@
     "@vitejs/plugin-react": "^1.0.7",
     "typescript": "^4.5.5",
     "vite": "^2.7.2"
-  }
+  },
+  "resolutions": { "@types/react": "17.0.33" }
 }
