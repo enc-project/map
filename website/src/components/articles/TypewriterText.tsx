@@ -12,6 +12,7 @@ const TypewriterText: FC<TypographyProps & {
   // max number milliseconds we add to minSpeed (between 0 and 100% will be added)
   randomSpeed?: number,
   lineHeight?: number,
+  enabled?: boolean,
   onComplete?: () => void,
 }> = ({
   text,
@@ -19,12 +20,14 @@ const TypewriterText: FC<TypographyProps & {
   minSpeed = 15,
   randomSpeed = 45,
   lineHeight = 1.5,
+  enabled = true,
   onComplete = () => {},
   ...props
 }) => {
-  const [ currentText, setCurrentText ] = useState('')
+  const [ currentText, setCurrentText ] = useState(enabled ? '' : text)
 
   useEffect(() => {
+    if(!enabled) return
     let active = true
     const runText = async () => {
       let currentIndex = 0

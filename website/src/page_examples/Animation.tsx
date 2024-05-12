@@ -87,7 +87,7 @@ const Chunk: FC = () => {
   )
 }
 
-const RedGreenOrBlue: FC = () => {
+const AnimationExample: FC = () => {
   const animationContainerRef = useRef<HTMLDivElement>(null)
   const animationContentRef = useRef<HTMLDivElement>(null)
   const article = useMemo(() => getArticle('red-green-or-blue'), [])
@@ -178,4 +178,4 @@ const RedGreenOrBlue: FC = () => {
   )
 }
 
-export default RedGreenOrBlue
+export default AnimationExample

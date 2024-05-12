@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
-import { Link } from 'react-router5'
 import { SxProps } from '@mui/system'
 import Avatar from '@mui/material/Avatar'
+import Divider from '@mui/material/Divider'
 import Row from '../widgets/Row'
 import Cell from '../widgets/Cell'
-import HeadlineStrapline from './HeadlineStrapline'
+import SerifTypography from '../widgets/SerifTypography'
 
 import theme from '../../theme'
 
@@ -51,21 +51,32 @@ const ArticleHeader: FC<{
       <Cell
         sx={{
           mt: getResponsiveSxAmount(0),
-          '& a': {
-            textDecoration: 'none',
-          },
           textAlign: 'center',
-          color: theme.palette.primary.main,
         }}
       >
-        <HeadlineStrapline
-          headline={isLargeScreen ? (
-            <>
-              {article.title}
-            </>
-          ) : (
-            article.title
-          )}
+        <SerifTypography
+          variant="h2"
+          gutterBottom
+          sx={{
+            color: theme.palette.primary.main,
+          }}
+        >
+          { article.title }
+        </SerifTypography>
+        <SerifTypography
+          variant="h6"
+          gutterBottom
+          sx={{
+            color: '#666',
+          }}
+        >
+          { article.description }
+        </SerifTypography>
+        <Divider 
+          sx={{
+            mt: getResponsiveSxAmount(4),
+            mb: getResponsiveSxAmount(4),
+          }}
         />
       </Cell>
     </Row>

@@ -3,11 +3,13 @@ import { useRoute } from 'react-router5'
 import browserPlugin from 'router5-plugin-browser'
 
 import Home from './pages/Home'
-import RedGreenOrBlue from './pages/RedGreenOrBlue'
-import ElectionCycles from './pages/ElectionCycles'
-import MediaManipulation from './pages/MediaManipulation'
-import PerspectiveGenerator from './pages/PerspectiveGenerator'
-import DataDrivenDecisions from './pages/DataDrivenDecisions'
+
+import ItDoesNotRepresentMe from './pages/ItDoesNotRepresentMe'
+import ItsSlowToChange from './pages/ItsSlowToChange'
+import ItsNotTrustworthy from './pages/ItsNotTrustworthy'
+
+import AnimationExample from './page_examples/Animation'
+import ContentLayoutExample from './page_examples/ContentLayout'
 
 // extend the base router5 route to add metadata and self rendering
 export interface IApplicationRoute extends Route {
@@ -34,49 +36,49 @@ const routes: IApplicationRoute[] = [{
       <Home />
   ),
 }, {
-  name: 'red-green-or-blue',
-  path: '/articles/red-green-or-blue',
+  name: 'it-does-not-represent-me',
+  path: '/articles/it-does-not-represent-me',
   meta: {
-    title: 'red, green, OR blue?',
+    title: 'It does not represent me',
   },
   render: () => (
-      <RedGreenOrBlue />
+      <ItDoesNotRepresentMe />
   ),
 }, {
-  name: 'election-cycles',
-  path: '/articles/election-cycles',
+  name: 'its-slow-to-change',
+  path: '/articles/its-slow-to-change',
   meta: {
-    title: 'It\'s sooo slow...',
+    title: `It's slow to change`,
   },
   render: () => (
-      <ElectionCycles />
+      <ItsSlowToChange />
   ),
 }, {
-  name: 'media-manipulation',
-  path: '/articles/media-manipulation',
+  name: 'its-not-trustworthy',
+  path: '/articles/its-not-trustworthy',
   meta: {
-    title: 'Media manipulation',
+    title: `It's not trustworthy`,
   },
   render: () => (
-      <MediaManipulation />
+      <ItsNotTrustworthy />
   ),
 }, {
-  name: 'perspective-generator',
-  path: '/articles/perspective-generator',
+  name: 'animation-example',
+  path: '/examples/animation',
   meta: {
-    title: 'Perspective generator',
+    title: 'Animation Example',
   },
   render: () => (
-      <PerspectiveGenerator />
+      <AnimationExample />
   ),
 }, {
-  name: 'data-driven-decisions',
-  path: '/articles/data-driven-decisions',
+  name: 'content-layout-example',
+  path: '/examples/content-layout',
   meta: {
-    title: 'Data Driven Decisions',
+    title: 'Content Layout Example',
   },
   render: () => (
-      <DataDrivenDecisions />
+      <ContentLayoutExample />
   ),
 }, NOT_FOUND_ROUTE]
 

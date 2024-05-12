@@ -19,6 +19,7 @@ const MultipleChoice: FC<{
   rowSx?: SxProps,
   cellSx?: SxProps,
   boxSx?: SxProps,
+  animated?: boolean,
   onChoose: (option: string) => void,
 }> = ({
   options,
@@ -26,12 +27,30 @@ const MultipleChoice: FC<{
   rowSx = {},
   cellSx = {},
   boxSx = {},
+  animated = true,
   onChoose,
 }) => {
 
+  const from = {
+    opacity: 1,
+    transform: 'scale(100%)',
+  }
+
+  const to = {
+    opacity: 1,
+    transform: 'scale(100%)',
+  }
+
+  if(animated) {
+    from.opacity = 0
+    from.transform = 'scale(0%)'
+    to.opacity = 1
+    to.transform = 'scale(100%)'
+  }
+
   const props = useSpring({
-    from: { opacity: 0, transform: 'scale(0%)' },
-    to: { opacity: 1, transform: 'scale(100%)' },
+    from,
+    to,
     config: {
       duration: 500,
       mass: 3,
@@ -47,7 +66,7 @@ const MultipleChoice: FC<{
     >
       {
         options.map((option, index) => {
-          const isSelected = option === selectedOption
+          const isSelected = option == selectedOption
           return (
             <Cell
               key={index}

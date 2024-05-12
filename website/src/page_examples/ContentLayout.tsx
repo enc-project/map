@@ -11,7 +11,7 @@ import { getResponsiveSxAmount } from '../styles'
 import theme from '../theme'
 import { ARTICLES } from '../data'
 
-const Home: FC = () => {
+const ContentLayoutExample: FC = () => {
   return (
     <Box>
       <HeadlineStrapline
@@ -73,4 +73,4 @@ const Home: FC = () => {
   )
 }
 
-export default Home
+export default ContentLayoutExample
