@@ -1,9 +1,11 @@
 import React, { FC, useState } from 'react'
 
 import Box from '@mui/material/Box'
+
 import TypewriterText from '../components/articles/TypewriterText'
 import MultipleChoice from '../components/articles/MultipleChoice'
-import Window from '../components/widgets/Window'
+import AllPartiesWindow from '../components/content/AllPartiesWindow'
+import NetflixWindow from '../components/content/NetflixWindow'
 
 import {
   getResponsiveSxAmount,
@@ -14,7 +16,10 @@ import useSequence from '../hooks/useSequence'
 const Home: FC = () => {
 
   const [ isItWorkingOption, setIsItWorkingOption ] = useState('')
-  const [ showAllParties, setShowAllParties ] = useState(false)
+  const [ showAllPartiesWindow, setShowAllPartiesWindow ] = useState(false)
+
+  const [ doYouCareOption, setDoYouCareOption ] = useState('')
+  const [ showNetflixWindow, setShowNetflixWindow ] = useState(false)
 
   const homeSequence = useSequence({
     steps: 4,
@@ -55,7 +60,7 @@ const Home: FC = () => {
               if(option === 'No') {
                 homeSequence.progress()
               } else {
-                setShowAllParties(true)
+                setShowAllPartiesWindow(true)
               }
             }}
           />
@@ -80,6 +85,7 @@ const Home: FC = () => {
               'Yes',
               'No',
             ]}
+            selectedOption={doYouCareOption}
             rowSx={{
               mt: getResponsiveSxAmount(4),
             }}
@@ -87,63 +93,30 @@ const Home: FC = () => {
               mr: getResponsiveSxAmount(4),
             }}
             onChoose={(option) => {
-              console.log(option)
-              homeSequence.progress()
+              setDoYouCareOption(option)
+              if(option === 'Yes') {
+                homeSequence.progress()
+              } else {
+                setShowNetflixWindow(true)
+              }
             }}
           />
         )
       }
 
       {
-        showAllParties && (
-          <Window
-            open
-            title={(
-              <Box
-                sx={{
-                  pt: 2,
-                  display: 'flex',
-                  flexDirection: 'row',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
-                <TypewriterText
-                  variant="h3"
-                  text="Please continue, nothing to see here..."
-                />
-              </Box>
-            )}
-            size="xl"
-            fullHeight
-            onCancel={ () => setShowAllParties(false) }
-          >
-            <Box
-              sx={{
-                width: '100%',
-                height: '100%',
-                display: 'flex',
-                flexDirection: 'row',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <Box
-                sx={{
-                  backgroundImage: "url('/img/all-parties.jpg')",
-                  backgroundSize: 'cover',
-                  backgroundRepeat: 'no-repeat',
-                  width: '95%',
-                  height: '95%',
-                  border: '1px solid #000',
-                  boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)',
-                }}
-              >
+        showAllPartiesWindow && (
+          <AllPartiesWindow
+            onCancel={ () => setShowAllPartiesWindow(false) }
+          />
+        )
+      }
 
-              </Box>
-            </Box>
-            
-          </Window>
+      {
+        showNetflixWindow && (
+          <NetflixWindow
+            onCancel={ () => setShowNetflixWindow(false) }
+          />
         )
       }
     </Box>
