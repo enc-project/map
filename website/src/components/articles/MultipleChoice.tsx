@@ -15,12 +15,14 @@ const AnimatedBox = animated(Box)
 
 const MultipleChoice: FC<{
   options: string[],
+  selectedOption?: string,
   rowSx?: SxProps,
   cellSx?: SxProps,
   boxSx?: SxProps,
   onChoose: (option: string) => void,
 }> = ({
   options,
+  selectedOption = '',
   rowSx = {},
   cellSx = {},
   boxSx = {},
@@ -44,37 +46,43 @@ const MultipleChoice: FC<{
       sx={rowSx}
     >
       {
-        options.map((option, index) => (
-          <Cell
-            key={index}
-            sx={cellSx}
-          >
-            <AnimatedBox
-              style={props}
-              sx={{
-                border: '1px solid #000',
-                borderRadius: '10px',
-                padding: '10px',
-                boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
-                cursor: 'pointer',
-                '&:hover': {
-                  color: 'secondary.main',
-                  borderColor: 'secondary.main',
-                },
-                ...boxSx,
-              }}
-              onClick={ () => onChoose(option) }
+        options.map((option, index) => {
+          const isSelected = option === selectedOption
+          return (
+            <Cell
+              key={index}
+              sx={cellSx}
             >
-              <SerifTypography
+              <AnimatedBox
+                style={props}
                 sx={{
-                  fontSize: getResponsiveFontSize(40),
+                  border: '1px solid #000',
+                  backgroundColor: isSelected ? 'secondary.main' : 'transparent',
+                  color: isSelected ? '#fff' : '#000',
+                  borderRadius: '10px',
+                  padding: '10px',
+                  boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
+                  cursor: 'pointer',
+                  '&:hover': {
+                    color: 'secondary.main',
+                    borderColor: 'secondary.main',
+                    backgroundColor: 'transparent',
+                  },
+                  ...boxSx,
                 }}
+                onClick={ () => onChoose(option) }
               >
-                { option }
-              </SerifTypography>
-            </AnimatedBox>
-          </Cell>
-        ))
+                <SerifTypography
+                  sx={{
+                    fontSize: getResponsiveFontSize(40),
+                  }}
+                >
+                  { option }
+                </SerifTypography>
+              </AnimatedBox>
+            </Cell>
+          )
+        })
       }
     </Row>
   )

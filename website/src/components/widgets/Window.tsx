@@ -69,7 +69,6 @@ const Window: FC<WindowProps> = ({
       maxWidth={ size }
       sx={{
         '& .MuiDialog-paper': {
-          backgroundColor: "#10101E",
           ...(fullHeight && {
             height: '100%',
           }),
