@@ -24,6 +24,12 @@ const Home: FC = () => {
           'Yes',
           'No',
         ]}
+        rowSx={{
+          mt: 4,
+        }}
+        cellSx={{
+          mr: 4,
+        }}
         onChoose={(option) => {
           console.log(option)
         }}

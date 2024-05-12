@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react'
 import { SxProps } from '@mui/system'
 import Box from '@mui/material/Box'
-import { animated, useSpring } from '@react-spring/web'
+import { animated, useSpring, easings } from '@react-spring/web'
 
 import Row from '../widgets/Row'
 import Cell from '../widgets/Cell'
@@ -25,7 +25,13 @@ const MultipleChoice: FC<{
   const props = useSpring({
     from: { opacity: 0, transform: 'scale(0%)' },
     to: { opacity: 1, transform: 'scale(100%)' },
-    config: { duration: 1000 }
+    config: {
+      duration: 1000,
+      mass: 3,
+      tension: 120,
+      friction: 14,
+      easing: easings.easeInOutBack,
+    }
   })
 
   return (
