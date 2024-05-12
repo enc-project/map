@@ -256,6 +256,10 @@ https://www.instagram.com/reel/C6ZX7kTNzGC/?igsh=MmZmMnFjYjl0eGtn
 
 https://www.instagram.com/reel/CsTImYBoKts/
 
+## tldr
+
+https://seths.blog/2024/05/the-defensive-arrogance-of-tldr/
+
 ## other things
 
 This is a list of other things we should cover - there are many more but for now here we are:
