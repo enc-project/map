@@ -260,6 +260,9 @@ https://www.instagram.com/reel/CsTImYBoKts/
 
 https://seths.blog/2024/05/the-defensive-arrogance-of-tldr/
 
+## bezos is really at the game
+
+
 ## other things
 
 This is a list of other things we should cover - there are many more but for now here we are:
@@ -272,5 +275,10 @@ This is a list of other things we should cover - there are many more but for now
  * David bowie rich enough
  * we have no idea what we are doing
  
+## the real 3 pillars
 
+The things that if we get right, all humans will do well.
 
+ * AI
+ * Nuclear Fusion 
+ * Robust Democracy
