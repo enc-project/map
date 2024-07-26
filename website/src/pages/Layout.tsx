@@ -43,7 +43,7 @@ const Layout: FC = ({ children }) => {
 
   return (
     <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100%' }}>
-      <AppBar position="fixed">
+      <AppBar position="fixed" sx={{ zIndex: 1400 }}>
         <Toolbar
           sx={{
             backgroundColor: '#fff',
