@@ -27,21 +27,16 @@ const useScrollPercentage: ScrollPercentageHook = (containerRef, contentRef, yOf
     const contentHeight = contentRef.current.offsetHeight
     const maxScrollableDistance = elementHeight - contentHeight
 
-    const startScrollPosition = elementOffsetTop - yOffset
-    const endScrollPosition = startScrollPosition + maxScrollableDistance
+    const startScrollPosition = elementOffsetTop
+    const endScrollPosition = startScrollPosition + maxScrollableDistance - yOffset
 
-    // Check if the div is completely out of view: above or below the viewport.
     if (scrollPosition < startScrollPosition) {
-        // If the scroll is above the start of the element, the div has not yet started to pass the top of the viewport.
         setPercentageScrolled(0)
     } else if (scrollPosition > endScrollPosition) {
-        // If the scroll is below the end of the element (considering the viewport height), the div has completely passed the bottom of the viewport.
         setPercentageScrolled(100)
     } else {
-        // The div is now starting to pass the top of the viewport or has started to be hidden by the bottom.
-        // Adjust the scroll percentage to account for the viewport height.
         const effectiveScrollDistance = scrollPosition - startScrollPosition
-        const percentage = (effectiveScrollDistance / maxScrollableDistance) * 100
+        const percentage = (effectiveScrollDistance / (maxScrollableDistance - yOffset)) * 100 // Adjust for yOffset here
         setPercentageScrolled(Math.min(Math.max(percentage, 0), 100))
     }
   }
