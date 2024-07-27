@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from 'react'
 
 function useThrottledState<T>(
   initialValue: T,
-  delay = 300,
+  delay = 50,
   // add optional function that accepts (T, T) and returns boolean
   // to determine if the new value should be set immediately
   shouldUpdateImmediately = (oldValue: T, newValue: T) => false,

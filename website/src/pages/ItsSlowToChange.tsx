@@ -6,6 +6,8 @@ import Paragraph from '../components/articles/Paragraph'
 import useScrollPercentage from '../hooks/useScrollPercentage'
 import { getArticle } from '../data'
 import { getProject, types } from '@theatre/core'
+import Lottie, { LottieRefCurrentProps } from "lottie-react"
+import testAnimation from '../../assets/lottie/test.json'
 
 if (process.env.NODE_ENV === 'development') {
   import('@theatre/studio').then((studio) => {
@@ -35,9 +37,9 @@ const paragraphs = [
   "If we could perhaps pay to have a game of tennis with the leader of a party, we could have a dis-proportionate influence on the actual decisions made."
 ]
 
-const animationContainerHeight = 4000 // Keep the container height
+const animationContainerHeight = 8000 // Keep the container height
 
-const animationBoxHeight = animationContainerHeight * 0.2 // Adjust the box height
+const animationBoxHeight = animationContainerHeight * 0.1 // Adjust the box height
 
 const Chunk: FC = () => (
   <>
@@ -47,19 +49,55 @@ const Chunk: FC = () => (
   </>
 )
 
-const AnimationExample: FC = () => {
+const AnimationContainer: FC<{
+  id: string;
+  animationData: any;
+  containerHeight: number;
+}> = ({ id, animationData, containerHeight }) => {
   const animationContainerRef = useRef<HTMLDivElement>(null)
   const animationContentRef = useRef<HTMLDivElement>(null)
   const [containerWidth, setContainerWidth] = useState<number | null>(null)
-  const [containerLeft, setContainerLeft] = useState<number | null>(null)
-  const article = useMemo(() => getArticle('red-green-or-blue'), [])
-  const scrollPercentage = useScrollPercentage(animationContainerRef, animationContentRef, animationBoxHeight)
+  const [scale, setScale] = useState<number>(1)
+  const scrollPercentage = useScrollPercentage(id, animationContainerRef, animationContentRef, containerHeight * 0.1)
+  const lottieRef = useRef<LottieRefCurrentProps>(null)
 
-  const theatreProject = useMemo(() => getProject('ScrollAnimation'), [])
+  const theatreProject = useMemo(() => getProject(`ScrollAnimation_${id}`), [id])
   const theatreSheet = useMemo(() => theatreProject.sheet('CircleAnimation'), [theatreProject])
   const circleObj = useMemo(() => theatreSheet.object('Circle', {
     x: types.number(0, { range: [0, 100] }),
+    y: types.number(0, { range: [0, 100] }),
+    scale: types.number(1, { range: [0.5, 2] }),
   }, { reconfigure: true }), [theatreSheet])
+
+  const totalFrames = useMemo(() => animationData.op, [animationData])
+
+  useEffect(() => {
+    console.log(`Scroll percentage: ${scrollPercentage.toFixed(3)}%`)
+    theatreSheet.sequence.position = scrollPercentage / 100
+
+    circleObj.initialValue = { 
+      x: scrollPercentage,
+      scale: 1 + (scrollPercentage / 100) // Scale from 1 to 2 (100% bigger)
+    }
+
+    if (lottieRef.current) {
+      lottieRef.current.setSpeed(0) // Set speed to 0 to prevent auto-play
+      if (lottieRef.current.getDuration) {
+        const duration = lottieRef.current.getDuration()
+        if (duration) {
+          const frame = Math.floor((scrollPercentage / 100) * (totalFrames - 1))
+          console.log(`Current frame: ${frame}, Total frames: ${totalFrames}`)
+          lottieRef.current.goToAndStop(frame, true)
+        }
+      }
+    }
+  }, [theatreSheet, scrollPercentage, circleObj, totalFrames])
+
+  useEffect(() => {
+    if (animationContainerRef.current) {
+      setContainerWidth(animationContainerRef.current.offsetWidth)
+    }
+  }, [scrollPercentage])
 
   useEffect(() => {
     circleObj.onValuesChange((values) => {
@@ -67,27 +105,13 @@ const AnimationExample: FC = () => {
         const containerWidth = animationContainerRef.current.offsetWidth
         const newLeft = (values.x / 100) * containerWidth
         animationContentRef.current.style.left = `${Math.min(newLeft, containerWidth - 50)}px` // Ensure the ball stays within bounds
+        setScale(values.scale) // Update scale state
       }
     })
   }, [circleObj, animationContainerRef])
 
-  useEffect(() => {
-    console.log(`Scroll percentage: ${scrollPercentage.toFixed(2)}%`)
-    theatreSheet.sequence.position = scrollPercentage / 100
-
-    // Update the circle's x position based on scroll percentage
-    circleObj.initialValue = { x: scrollPercentage } // Use initialValue to update the value
-  }, [theatreSheet, scrollPercentage, circleObj])
-
-  useEffect(() => {
-    if (animationContainerRef.current) {
-      setContainerWidth(animationContainerRef.current.offsetWidth)
-      setContainerLeft(animationContainerRef.current.getBoundingClientRect().left)
-    }
-  }, [scrollPercentage])
-
   const animationContainerStyles: SxProps = {
-    height: `${animationContainerHeight}px`, // Use the full container height
+    height: `${containerHeight}px`, // Use the full container height
     position: 'relative',
   }
 
@@ -108,8 +132,32 @@ const AnimationExample: FC = () => {
     height: '50px',
     borderRadius: '50%',
     backgroundColor: 'red',
-    transition: 'left 0.3s ease-in-out',
+    transition: 'left 0.4s ease-in-out, transform 0.4s ease-in-out', // Reduced transition duration for smoother animation
+    transform: `scale(${scale})` // Apply scale transformation from state
   }
+
+  return (
+    <Box id={`animation-container-${id}`} ref={animationContainerRef} sx={animationContainerStyles}>
+      <Box id={`animation-box-${id}`} sx={animationBoxStyles}>
+        <Box id={`animation-circle-${id}`} ref={animationContentRef} sx={animationCircleStyles} />
+        <Lottie
+          lottieRef={lottieRef}
+          animationData={animationData}
+          style={{ 
+            width: '100%', 
+            height: '100%', 
+            position: 'absolute', 
+            top: 0, 
+            left: 0 
+          }}
+        />
+      </Box>
+    </Box>
+  )
+}
+
+export default () => {
+  const article = useMemo(() => getArticle('red-green-or-blue'), [])
 
   return (
     <Box>
@@ -119,11 +167,13 @@ const AnimationExample: FC = () => {
       <Chunk />
       <Chunk />
 
-      <Box id="animation-container" ref={animationContainerRef} sx={animationContainerStyles}>
-        <Box id="animation-box" sx={animationBoxStyles}>
-          <Box id="animation-circle" ref={animationContentRef} sx={animationCircleStyles} />
-        </Box>
-      </Box>
+      <AnimationContainer id="animation1" animationData={testAnimation} containerHeight={8000} />
+
+      <Chunk />
+      <Chunk />
+      <Chunk />
+
+      <AnimationContainer id="animation2" animationData={testAnimation} containerHeight={6000} />
 
       <Chunk />
       <Chunk />
@@ -131,5 +181,3 @@ const AnimationExample: FC = () => {
     </Box>
   )
 }
-
-export default AnimationExample
