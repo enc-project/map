@@ -73,10 +73,6 @@ What if you got "paid" everytime another human gave some of their attention to w
 
 What if we turned the profit motive into a creativity motive?
 
-
-
-
-
 -------------------------------------------------------------------------------------------------------------------------------------
 
 Storyline:
@@ -221,8 +217,8 @@ CUT scene: the revolution
 
 We now see the emperors new clothes put into action and companies are forced to give up their power and the world is now run by the people.
 
-TODO: fill this out and make it into a good ending (I have back ache now so am going to rest).<AI-Processing>
+TODO: fill this out and make it into a good ending (I have back ache now so am going to rest).
+
+<AI-Processing>
 
 </AI-Processing>
-
-
