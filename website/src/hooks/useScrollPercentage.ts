@@ -3,14 +3,13 @@ import useThrottledState from './useThrottledState'
 
 interface ScrollPercentageHook {
   (
-    id: string,
     containerRef: React.RefObject<HTMLDivElement>,
     contentRef: React.RefObject<HTMLDivElement>,
     yOffset?: number,
   ): number
 }
 
-const useScrollPercentage: ScrollPercentageHook = (id, containerRef, contentRef, yOffset = 0) => {
+const useScrollPercentage: ScrollPercentageHook = (containerRef, contentRef, yOffset = 0) => {
   const [percentageScrolled, setPercentageScrolled] = useThrottledState<number>(0, 16, (oldValue: number, newValue: number) => {
     // Update immediately if the difference is significant
     return Math.abs(oldValue - newValue) > 0.1
